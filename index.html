@@ -1,336 +1,560 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kuldeep Bhardwaj | Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --background-color: #ecf0f1;
-            --text-color: #34495e;
-            --card-bg: #ffffff;
-            --shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.7;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            scroll-behavior: smooth;
-        }
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kuldeep Bhardwaj | Backend Developer</title>
+  <meta name="description" content="Welcome to the portfolio of Kuldeep Bhardwaj, a Backend Developer and IIT Delhi graduate showcasing projects, skills, and professional experience.">
+  <meta name="keywords" content="Kuldeep Bhardwaj, Backend Developer, IIT Delhi, Python, Java, Machine Learning, Data Science, Portfolio">
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            overflow: hidden;
-            padding: 0 2rem;
-        }
+  <!-- Favicon -->
+  <link rel="icon" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/logo_1.jpeg?raw=true">
 
-        header {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
+  <!-- Preload critical background images for smooth loading -->
+  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/wp4575277-4k-galaxy-wallpapers.jpg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/about_background.jpeg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Resume_background.jpeg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Contact_background.jpeg?raw=true">
 
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Vendor CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-        header h1 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
+  <!-- Main CSS -->
+  <style>
+    /* Base Styles */
+    :root {
+      --primary-color: #ffc400; /* Accent Color */
+      --secondary-color: #fff;
+      --dark-color: #040404;
+      --body-font: 'Outfit', sans-serif;
+    }
+    body {
+      font-family: var(--body-font);
+      background-color: var(--dark-color);
+      color: var(--secondary-color);
+      margin: 0;
+      padding: 0;
+    }
+    a { color: var(--primary-color); text-decoration: none; }
+    a:hover { color: #ffd54f; text-decoration: none; }
+    h1, h2, h3, h4, h5, h6 { font-family: var(--body-font); }
+    
+    /* ===== START: Earth and Moon Preloader CSS ===== */
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: var(--dark-color); /* Matches the body background */
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease-out; /* Smooth fade-out */
+    }
+    #preloader.loaded {
+      opacity: 0;
+      visibility: hidden; /* Hide after transition */
+    }
+    .preloader-container {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .earth {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, #87CEEB, #2c729c); /* Sky blue to deep blue */
+      border-radius: 50%;
+      box-shadow: 0 0 20px rgba(135, 206, 235, 0.7), inset 0 0 10px rgba(0,0,0,0.3);
+    }
+    .moon-orbit {
+      position: absolute;
+      width: 100px; /* Diameter of the orbit */
+      height: 100px;
+      border-radius: 50%;
+      animation: orbit-spin 4s linear infinite;
+    }
+    .moon {
+      position: absolute;
+      top: -6px; /* (Orbit width - Moon width) / 2 adjusted */
+      left: 44px; /* (Orbit width - Moon width) / 2 */
+      width: 12px;
+      height: 12px;
+      background: #f0f0f0;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #ffffff;
+    }
+    @keyframes orbit-spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    /* ===== END: Preloader CSS ===== */
 
-        header nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
+    /* Top Navigation (for tabs) */
+    #top-nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 0;
+      background: rgba(10, 10, 10, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #222;
+    }
+    #top-nav .nav-links { list-style: none; padding: 0; margin: 0 3rem 0 auto; display: flex; gap: 1.5rem; }
+    #top-nav .nav-links a { color: #ccc; font-weight: 500; text-decoration: none; transition: color 0.3s; cursor: pointer; }
+    #top-nav .nav-links a.active, #top-nav .nav-links a:hover { color: var(--primary-color); }
+    .my-name {
+      font-size: 1.4rem; font-weight: 600; color: #fff; cursor: pointer;
+      transition: color 0.3s; margin-left: 5%;
+    }
+    .my-name:hover { color: var(--primary-color); }
+    
+    /* Header (Home Page) */
+    #header {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #040918; /* Fallback color */
+      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/wp4575277-4k-galaxy-wallpapers.jpg?raw=true');
+      background-size: cover;
+      background-position: center center;
+    }
+    .header-content { padding-left: 5%; position: relative; z-index: 2; }
+    #header h1 { font-size: 64px; margin: 0; padding: 0; line-height: 1; font-weight: 700; }
+    #header h1 .im { color: rgba(255, 255, 255, 0.7); }
+    #header h1 .name { 
+      background: linear-gradient(to right, #00aaff, #18d26e); 
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    #header h2 { color: #ccc; margin-top: 20px; font-size: 24px; }
+    #header .navbar { margin-top: 30px; }
+    #header .navbar ul { padding: 0; list-style: none; display: flex; gap: 25px; }
+    #header .navbar a { color: #ccc; font-weight: 500; padding-bottom: 5px; position: relative; cursor: pointer; }
+    #header .navbar a.active { color: var(--primary-color); }
+    #header .navbar a.active::after {
+      content: ''; position: absolute; width: 100%; height: 2px;
+      background: var(--primary-color); left: 0; bottom: 0;
+    }
+    #header .social-links { margin-top: 40px; display: flex; align-items: center; gap: 15px; }
+    #header .social-links a {
+      font-size: 18px; display: flex; justify-content: center; align-items: center;
+      background: rgba(255, 255, 255, 0.1); color: #fff; line-height: 1;
+      border-radius: 50%; width: 40px; height: 40px; transition: 0.3s;
+    }
+    #header .social-links a:hover { background: var(--primary-color); }
 
-        header nav a:hover {
-            color: var(--secondary-color);
-        }
+    /* General Section Styling */
+    .page-section {
+      position: relative;
+      padding: 80px 5% 60px 5%;
+      display: none; /* Hide sections by default */
+      min-height: 100vh; /* Allow section to grow, enabling scrolling */
+      background-size: cover;
+      background-position: center center;
+      background-attachment: fixed;
+      animation: fadeIn 0.5s ease-in-out; /* Use animation for smooth appearance */
+    }
 
-        #showcase {
-            padding-top: 120px;
-            padding-bottom: 60px;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            min-height: 80vh;
-        }
-        
-        #showcase .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 5px solid var(--secondary-color);
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-        }
+    /* Animation definition for smooth fade-in */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .section-title h2 {
+      font-size: 32px; font-weight: bold; margin-bottom: 20px; padding-bottom: 20px;
+      position: relative; color: #fff;
+    }
+    .section-title h2::after {
+      content: ''; position: absolute; display: block; width: 50px; height: 3px;
+      background: var(--primary-color); bottom: 0; left: 0;
+    }
+    .section-title p { margin-bottom: 0; font-size: 1.2rem; }
+    .page-section::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(4, 4, 4, 0.75); z-index: 1;
+    }
+    .page-section > * { position: relative; z-index: 2; }
+    
+    /* Section Backgrounds with Fallbacks */
+    #about {
+      background-color: #1a1a2e;
+      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/about_background.jpeg?raw=true');
+    }
+    #resume {
+      background-color: #0d021a;
+      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Resume_background.jpeg?raw=true');
+    }
+    #contact {
+      background-color: #0b1a2e;
+      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Contact_background.jpeg?raw=true');
+    }
+    
+    /* About Section */
+    .about-me .img-fluid { border-radius: 10px; max-width: 350px;}
+    .about-me .content h3 { font-weight: 700; font-size: 26px; color: var(--primary-color); }
+    .gradient-text {
+      background: linear-gradient(90deg, var(--primary-color), #fff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;
+    }
+    .tech .box { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 20px; }
+    .tech .box-sub {
+      background: #1e1e1e; padding: 10px 15px; border-radius: 8px; display: flex; align-items: center;
+      gap: 10px; transition: all 0.3s ease; flex-basis: calc(14.28% - 13px);
+      min-width: 150px; justify-content: center;
+    }
+    .tech .box-sub:hover { transform: translateY(-3px); background: var(--primary-color); color: #000; }
+    .interests .icon-box {
+      display: flex; align-items: center; padding: 20px; background: rgba(255, 255, 255, 0.08);
+      transition: ease-in-out 0.3s; border-radius: 8px;
+    }
+    .interests .icon-box i { font-size: 32px; padding-right: 10px; line-height: 1; }
+    .interests .icon-box h3 { font-weight: 700; margin: 0; padding: 0; line-height: 1; font-size: 16px; }
+    .interests .icon-box:hover { background: rgba(255, 255, 255, 0.12); }
 
-        #showcase h2 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        #showcase p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: #fff;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            background: #2980b9;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            width: 80px;
-            height: 4px;
-            background: var(--secondary-color);
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
-        }
-        
-        .grid-layout {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-        }
-        
-        .card h3 {
-            color: var(--secondary-color);
-            margin-top: 0;
-        }
-
-        .card ul {
-            padding-left: 20px;
-        }
-
-        #skills .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-        }
-
-        .skill-badge {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: 500;
-        }
-
-        #contact {
-            text-align: center;
-        }
-
-        .social-links a {
-            color: var(--primary-color);
-            font-size: 2rem;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        footer {
-            background: var(--primary-color);
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem 0;
-            margin-top: 40px;
-        }
-
-        @media(max-width: 768px) {
-            header .container { flex-direction: column; }
-            header nav { margin-top: 10px; }
-            header nav a { margin: 0 8px; }
-            #showcase { padding-top: 180px; }
-            #showcase h2 { font-size: 2.5rem; }
-        }
-    </style>
+    /* Resume Section */
+    .resume .section-title p { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
+    .resume .resume-title { font-size: 26px; font-weight: 700; margin-top: 20px; margin-bottom: 20px; color: #fff; }
+    .resume .resume-item {
+      padding: 0 0 20px 20px; margin-top: -2px; border-left: 2px solid rgba(255, 255, 255, 0.2); position: relative;
+    }
+    .resume .resume-item h4 {
+      line-height: 18px; font-size: 18px; font-weight: 600; text-transform: uppercase;
+      color: var(--primary-color); margin-bottom: 10px;
+    }
+    .resume .resume-item h5 {
+      font-size: 16px; background: rgba(255, 255, 255, 0.15); padding: 5px 15px;
+      display: inline-block; font-weight: 600; margin-bottom: 10px;
+    }
+    .resume .resume-item::before {
+      content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50px;
+      left: -9px; top: 0; background: var(--primary-color); border: 2px solid var(--primary-color);
+    }
+    .cta-button {
+      background: var(--primary-color); color: #000; padding: 10px 25px; border-radius: 5px;
+      text-decoration: none; font-weight: 600; transition: all 0.3s;
+    }
+    .cta-button:hover { background: #ffd54f; }
+    
+    /* Contact Section */
+    .contact .info-box {
+      color: #fff; padding: 20px; width: 100%; background: rgba(255, 255, 255, 0.08);
+      border-radius: 8px; height: 100%;
+    }
+    .contact .info-box i.bx {
+      font-size: 24px; color: var(--primary-color); border-radius: 50%; padding: 14px;
+      float: left; background: rgba(255, 255, 255, 0.1);
+    }
+    .contact .info-box h3 { font-size: 20px; color: #fff; font-weight: 700; margin: 10px 0 10px 68px; }
+    .contact .info-box p { padding: 0; color: #ccc; line-height: 24px; font-size: 14px; margin: 0 0 0 68px; }
+    .contact .php-email-form { padding: 30px; background: rgba(255, 255, 255, 0.08); border-radius: 8px; }
+    .contact .php-email-form input, .contact .php-email-form textarea {
+      background: rgba(0, 0, 0, 0.3); border: 1px solid #333; padding: 10px;
+      color: #fff; width: 100%; border-radius: 5px;
+    }
+    .contact .php-email-form button[type="submit"] {
+      background: var(--primary-color); border: 0; padding: 10px 24px; color: #000;
+      transition: 0.4s; border-radius: 4px; font-weight: 600;
+    }
+    
+    /* Typed.js Cursor */
+    .typed-cursor { opacity: 1; animation: typedjsBlink 0.7s infinite; }
+    @keyframes typedjsBlink { 50% { opacity: 0.0; } }
+  </style>
 </head>
+
 <body>
-    <header>
-        <div class="container">
-            <h1>Kuldeep Bhardwaj</h1>
-            <nav>
-                <a href="#showcase">Home</a>
-                <a href="#about">About</a>
-                <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
-                <a href="#contact">Contact</a>
-            </nav>
+
+  <!-- ===== START: Preloader HTML ===== -->
+  <div id="preloader">
+    <div class="preloader-container">
+      <div class="earth"></div>
+      <div class="moon-orbit">
+        <div class="moon"></div>
+      </div>
+    </div>
+  </div>
+  <!-- ===== END: Preloader HTML ===== -->
+
+  <nav id="top-nav">
+    <a class="my-name nav-link" data-target="#home">Kuldeep Bhardwaj</a>
+    <ul class="nav-links">
+      <li><a class="nav-link" data-target="#home">Home</a></li>
+      <li><a class="nav-link" data-target="#about">About</a></li>
+      <li><a class="nav-link" data-target="#resume">Resume</a></li>
+      <li><a class="nav-link" data-target="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header id="header">
+    <div class="header-content">
+      <p>Hey, there! 👋</p>
+      <h1><span class="im">I'm</span> <span class="name">Kuldeep Bhardwaj</span></h1>
+      <h2>a <span class="typed"></span> from IIT Delhi.</h2>
+      <nav class="navbar">
+        <ul>
+          <li><a class="nav-link" data-target="#home">Home</a></li>
+          <li><a class="nav-link" data-target="#about">About</a></li>
+          <li><a class="nav-link" data-target="#resume">Resume</a></li>
+          <li><a class="nav-link" data-target="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="social-links">
+        <a href="https://github.com/KBhardwaj-007" target="_blank" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        <a href="https://www.linkedin.com/in/bhardwajk/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+        <a href="mailto:kuldeep.j.bhardwaj@gmail.com" class="gmail" aria-label="Email"><i class="bi bi-envelope"></i></a>
+        <a href="Kuldeep_Bhardwaj_Resume.pdf" target="_blank" class="resume-dl" aria-label="Download Resume"><i class="bi bi-file-earmark-person"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="page-section">
+        <div class="about-me">
+            <div class="section-title">
+                <h2>About</h2>
+                <p>More About Me</p>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-center" data-aos="fade-right">
+                    <img src="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/P_P.jpeg?raw=true" class="img-fluid" alt="Kuldeep Bhardwaj">
+                </div>
+                <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                    <h3>Backend Developer &amp; ML Enthusiast</h3>
+                    <p class="fst-italic"><em>Building robust, scalable solutions with a passion for clean code and data-driven insights.</em></p>
+                    <p>My journey began as an <b class="gradient-text">Electrical Engineering</b> student at <b class="gradient-text">IIT Delhi</b>, where a deep curiosity for technology led me to the world of computer science. I quickly developed a passion for software development, diving into data structures, algorithms, and machine learning.</p>
+                </div>
+            </div>
         </div>
-    </header>
-
-    <main>
-        <section id="showcase">
-            <div class="container">
-                <!-- 
-                  IMPORTANT: Paste the direct link to your photo from ImgBB here.
-                  Replace the placeholder link below with your actual photo link.
-                -->
-                <img src="https://github.com/KBhardwaj-007/kbhardwaj-007.github.io/blob/main/Professional_Photo.jpeg?raw=true" alt="Kuldeep Bhardwaj" class="profile-img">
-                
-                <h2>Data Analyst & Machine Learning Enthusiast</h2>
-                <p>B.Tech in Electrical Engineering from IIT Delhi with a passion for building data-driven solutions and solving complex problems through technology.</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
-            </div>
-        </section>
-
-        <section id="about">
-            <div class="container">
-                <h2 class="section-title">About Me</h2>
-                <div class="grid-layout">
-                    <div class="card">
-                        <h3>Education</h3>
-                        <ul>
-                            <li><strong>B.Tech Electrical Engineering</strong><br>Indian Institute of Technology Delhi, 2017</li>
-                            <li><strong>RBSE, Class XII</strong><br>Shiv Jyoti Senior Secondary School, Kota, 2015</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>Achievements</h3>
-                        <ul>
-                            <li><strong>JEE Advanced:</strong> Secured AIR 2991 (2018)</li>
-                            <li><strong>JEE Mains:</strong> Secured AIR 7692 (2018)</li>
-                            <li><strong>District Merit:</strong> 5th rank in 10th board examination (2015)</li>
-                        </ul>
-                    </div>
-                     <div class="card">
-                        <h3>Experience</h3>
-                        <p><strong>Data Analyst Intern</strong><br><em>AdCity Mart Pvt. Ltd. (May - July 2021)</em></p>
-                        <p>Developed NLP pipelines, automated performance tracking, and built scalable data workflows using Python, Pandas, and AWS.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="container">
-                <h2 class="section-title">Projects</h2>
-                <div class="grid-layout">
-                    <div class="card">
-                        <h3>Ride Demand Forecasting</h3>
-                        <p>Analyzed Uber ride data to uncover demand patterns and built time-series forecasting models with a Streamlit dashboard for visualization.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Retail Recommendation System</h3>
-                        <p>Built a hybrid product recommendation system integrating collaborative filtering and content-based ML on a dataset of over 100K records.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Credit Card Fraud Detection</h3>
-                        <p>Developed a robust deep learning system using PyTorch/TensorFlow to detect fraudulent transactions, applying SHAP/LIME for model interpretability.</p>
-                    </div>
-                     <div class="card">
-                        <h3>Pac-Man Navigation System</h3>
-                        <p>Designed a 2D navigation system using graph traversal (DFS) and object-oriented principles to find optimal paths in a maze.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="container">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-container">
-                    <span class="skill-badge">Python</span>
-                    <span class="skill-badge">Java</span>
-                    <span class="skill-badge">C++</span>
-                    <span class="skill-badge">NumPy</span>
-                    <span class="skill-badge">Pandas</span>
-                    <span class="skill-badge">TensorFlow</span>
-                    <span class="skill-badge">PyTorch</span>
-                    <span class="skill-badge">Scikit-learn</span>
-                    <span class="skill-badge">SQL</span>
-                    <span class="skill-badge">MongoDB</span>
-                    <span class="skill-badge">AWS</span>
-                    <span class="skill-badge">Git & GitHub</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact">
-            <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <p>Feel free to reach out via email or connect with me on social media.</p>
-                <div class="social-links">
-                    <!-- Your personal links are now here -->
-                    <a href="mailto:kuldeep.j.bhardwaj@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/bhardwajk" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://github.com/KBhardwaj-007" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Kuldeep Bhardwaj. All Rights Reserved.</p>
+        <div class="skills container-fluid" style="margin-top: 60px; margin-bottom: 60px;">
+            <div class="section-title"><h2>Skills</h2></div>
+            <!-- Skills content can be expanded here if needed -->
         </div>
-    </footer>
+        <div class="tech container-fluid">
+            <div class="section-title"><h2>TECH-INTERESTS</h2></div>
+            <div class="box techbox" data-aos="fade-up">
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="24"> Python</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="24"> Java</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width="24"> C++</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="24"> TensorFlow</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="24"> PyTorch</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS" width="24"> AWS</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="24"> MySQL</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="24"> MongoDB</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="24"> Git</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="24"> GitHub</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" width="24"> VS Code</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" width="24"> Postman</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width="24"> NumPy</div>
+                <div class="tech-sub box-sub"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="24"> Pandas</div>
+            </div>
+        </div>
+        <div class="interests container-fluid" style="margin-top: 60px;">
+            <div class="section-title"><h2>Interests</h2></div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in"><i class="ri-code-s-slash-line" style="color: #ffbb2c;"></i><h3>Coding</h3></div></div>
+                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in" data-aos-delay="100"><i class="ri-music-2-line" style="color: #5578ff;"></i><h3>Music</h3></div></div>
+                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in" data-aos-delay="200"><i class="ri-gamepad-line" style="color: #e80368;"></i><h3>Gaming</h3></div></div>
+                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in" data-aos-delay="300"><i class="ri-movie-2-line" style="color: #e361ff;"></i><h3>Movies/Series</h3></div></div>
+                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in" data-aos-delay="400"><i class="ri-robot-line" style="color: #47aeff;"></i><h3>New Technologies</h3></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="resume" class="page-section">
+        <div class="section-title">
+            <h2>Resume</h2>
+            <p>CHECK MY RESUME</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-up">
+                <h3 class="resume-title">Summary</h3>
+                <div class="resume-item pb-0">
+                    <h4>Kuldeep Bhardwaj</h4>
+                    <p><em>Detail-oriented and motivated B.Tech graduate from IIT Delhi with a strong foundation in Electrical Engineering and Computer Science. Proficient in backend development, machine learning, and data analysis, with hands-on experience in building robust applications.</em></p>
+                </div>
+                <h3 class="resume-title">Education</h3>
+                <div class="resume-item">
+                    <h4>B.Tech in Electrical Engineering</h4>
+                    <h5>2018 - 2023 (Expected)</h5>
+                    <p><em>Indian Institute of Technology (IIT), Delhi</em></p>
+                </div>
+                <h3 class="resume-title">Scholastic Achievements</h3>
+                <div class="resume-item">
+                    <h4>Joint Entrance Examination (JEE)</h4>
+                    <ul>
+                        <li><b>JEE Advanced (2018):</b> Secured AIR 2991 out of 2 lakh students.</li>
+                        <li><b>JEE Mains (2018):</b> Secured AIR 7692 out of 12 lakh students.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="resume-title">Professional Experience</h3>
+                <div class="resume-item">
+                    <h4>Data Analyst Intern</h4>
+                    <h5>May 2021 - July 2021</h5>
+                    <p><em>AdCity Mart Pvt. Ltd. | Delhi, India</em></p>
+                    <ul>
+                        <li>Built a BERT-based NLP pipeline boosting sentiment detection accuracy by 35%.</li>
+                        <li>Automated agent performance tracking, reducing manual analysis time by 70%.</li>
+                        <li>Deployed scalable workflows with AWS, streamlining data pipelines.</li>
+                    </ul>
+                </div>
+                <h3 class="resume-title">Projects</h3>
+                <div class="resume-item">
+                    <h4>Personalized Retail Recommendation System</h4>
+                    <p><em>Built a hybrid system integrating Collaborative Filtering, Matrix Factorization, and Content-Based ML on 100K+ records.</em></p>
+                </div>
+                <div class="resume-item">
+                    <h4>Credit Card Fraud Detection</h4>
+                    <p><em>Constructed a deep learning fraud detection system using PyTorch/TensorFlow, applying SHAP/LIME for model interpretability.</em></p>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="Kuldeep_Bhardwaj_Resume.pdf" target="_blank" class="cta-button">Download Full Resume (PDF)</a>
+        </div>
+    </section>
+
+    <section id="contact" class="page-section">
+        <div class="section-title">
+            <h2>Contact</h2>
+            <p>Contact Me</p>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-map"></i><h3>My Location</h3><p>Delhi, India 🇮🇳 | <span id="live-time"></span></p></div></div>
+            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-envelope"></i><h3>Email Me</h3><p><a href="mailto:kuldeep.j.bhardwaj@gmail.com">kuldeep.j.bhardwaj@gmail.com</a></p></div></div>
+            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-phone-call"></i><h3>Call Me</h3><p>+91 77268 16102</p></div></div>
+        </div>
+        <div class="mt-5">
+            <h3 class="resume-title">Write Message</h3>
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSe_.../formResponse" method="post" role="form" class="php-email-form" target="_blank">
+                <div class="row">
+                    <div class="col-md-6 form-group"><input type="text" name="entry.1767071648" class="form-control" placeholder="Your Name" required></div>
+                    <div class="col-md-6 form-group mt-3 mt-md-0"><input type="email" name="entry.413679677" class="form-control" placeholder="Your Email" required></div>
+                </div>
+                <div class="form-group mt-3"><input type="text" name="entry.1905060320" class="form-control" placeholder="Subject" required></div>
+                <div class="form-group mt-3"><textarea name="entry.1538613288" class="form-control" rows="5" placeholder="Message" required></textarea></div>
+                <div class="text-center mt-3"><button type="submit">Send Message</button></div>
+            </form>
+        </div>
+    </section>
+  </main>
+
+  <!-- Vendor JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  
+  <!-- Main JS -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      "use strict";
+
+      // ===== START: Preloader JS =====
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        window.addEventListener('load', () => {
+          preloader.classList.add('loaded');
+          // Wait for the transition to finish before setting display to none
+          setTimeout(() => {
+            preloader.style.display = 'none';
+          }, 500); // This duration should match the CSS transition duration
+        });
+      }
+      // ===== END: Preloader JS =====
+
+      const topNav = document.getElementById('top-nav');
+      const header = document.getElementById('header');
+      const sections = document.querySelectorAll('.page-section');
+      const allNavLinks = document.querySelectorAll('.nav-link');
+
+      const showPage = (targetId) => {
+        const isHome = targetId === '#home';
+
+        if (isHome) {
+          header.style.display = 'flex';
+          topNav.style.display = 'none';
+          sections.forEach(sec => sec.style.display = 'none');
+        } else {
+          header.style.display = 'none';
+          topNav.style.display = 'flex';
+          sections.forEach(sec => {
+            sec.style.display = ('#' + sec.id === targetId) ? 'block' : 'none';
+          });
+        }
+        
+        updateActiveLink(targetId);
+      };
+
+      const updateActiveLink = (targetId) => {
+        allNavLinks.forEach(link => {
+          if (link.getAttribute('data-target') === targetId) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      };
+
+      allNavLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const targetId = link.getAttribute('data-target');
+          showPage(targetId);
+        });
+      });
+
+      AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
+
+      new Typed('.typed', {
+        strings: ["Backend Developer", "Machine Learning Enthusiast", "Problem Solver", "Lifelong Learner"],
+        loop: true,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 2000
+      });
+
+      const timeElement = document.getElementById('live-time');
+      const updateTime = () => {
+        if (timeElement) {
+          const now = new Date();
+          const options = {
+            weekday: 'short', month: 'short', day: 'numeric',
+            hour: '2-digit', minute: '2-digit', second: '2-digit',
+            hour12: true, timeZone: 'Asia/Kolkata'
+          };
+          timeElement.textContent = now.toLocaleString('en-IN', options).replace(/,/g, '') + ' (IST)';
+        }
+      };
+      updateTime();
+      setInterval(updateTime, 1000);
+
+      showPage('#home');
+    });
+  </script>
+
 </body>
-
 </html>
