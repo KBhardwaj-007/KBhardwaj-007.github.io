@@ -335,59 +335,63 @@
       background-color: var(--primary-color);
       border-radius: 5px;
     }
-
-    /* ===== START: NEW Tech Interests Section Styling ===== */
+    
+    /* ===== START: NEW GALAXY-THEME Tech Interests Section ===== */
     .tech .tech-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
+      gap: 15px; /* Smaller gap */
       margin-top: 30px;
     }
-    .tech-card-container {
-      flex-basis: 160px;
-      height: 80px;
-      perspective: 1000px;
-      cursor: pointer;
+    .tech-item {
+        flex-basis: 130px; /* Smaller width */
+        height: 50px;     /* Smaller height */
+        padding: 0 10px;
+        background: #1a1a1e;
+        border: 1px solid #333;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        font-size: 0.9rem; /* Smaller font */
+        font-weight: 500;
+        color: #ccc;
+        position: relative; /* For the pseudo-element */
+        overflow: hidden;   /* To contain the glow effect */
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
     }
-    .tech-card {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+    .tech-item img {
+        width: 20px;
+        height: 20px;
     }
-    .tech-card-container:hover .tech-card {
-      transform: rotateY(180deg);
+    .tech-item:hover {
+        transform: translateY(-4px) scale(1.03);
+        color: #fff;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 20px rgba(255, 196, 0, 0.5);
     }
-    .tech-card-front, .tech-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 10px;
-      font-weight: 500;
-      font-size: 1rem;
+    /* The galaxy pattern pseudo-element */
+    .tech-item::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 250px; /* Make it large enough to cover the scaled-up box */
+        height: 250px;
+        background-image: radial-gradient(circle, rgba(255,196,0,0.5) 0%, rgba(156,39,176,0.3) 40%, rgba(4,4,4,0) 70%);
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        border-radius: 50%;
     }
-    .tech-card-front {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      color: #fff;
+    .tech-item:hover::before {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
     }
-    .tech-card-back {
-      background: var(--primary-color);
-      color: var(--dark-color);
-      transform: rotateY(180deg);
-      font-weight: 600;
-    }
-    .tech-card-back img {
-      filter: invert(1); /* Invert icon color for dark text */
-    }
-    /* ===== END: NEW Tech Interests Section Styling ===== */
+    /* ===== END: NEW GALAXY-THEME Tech Interests Section ===== */
 
     .interests .icon-box {
       display: flex; align-items: center; padding: 20px; background: rgba(255, 255, 255, 0.08);
@@ -601,134 +605,27 @@
         <div class="tech container-fluid">
             <div class="section-title"><h2>TECH-INTERESTS</h2></div>
             <div class="tech-grid" data-aos="fade-up">
-                
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="24"> Python</div>
-                        <div class="tech-card-back">Python</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" width="24"> Java</div>
-                        <div class="tech-card-back">Java</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width="24"> C++</div>
-                        <div class="tech-card-back">C++</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" width="24"> TensorFlow</div>
-                        <div class="tech-card-back">TensorFlow</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="24"> PyTorch</div>
-                        <div class="tech-card-back">PyTorch</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn" width="24"> Scikit-learn</div>
-                        <div class="tech-card-back">Scikit-learn</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" width="24"> AWS</div>
-                        <div class="tech-card-back">AWS</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" width="24"> MySQL</div>
-                        <div class="tech-card-back">MySQL</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB" width="24"> MongoDB</div>
-                        <div class="tech-card-back">MongoDB</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" width="24"> Git</div>
-                        <div class="tech-card-back">Git</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" width="24"> GitHub</div>
-                        <div class="tech-card-back">GitHub</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" width="24"> VS Code</div>
-                        <div class="tech-card-back">VS Code</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman" width="24"> Postman</div>
-                        <div class="tech-card-back">Postman</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" width="24"> NumPy</div>
-                        <div class="tech-card-back">NumPy</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" width="24"> Pandas</div>
-                        <div class="tech-card-back">Pandas</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" width="24"> MATLAB</div>
-                        <div class="tech-card-back">MATLAB</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse" width="24"> Eclipse</div>
-                        <div class="tech-card-back">Eclipse</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter" width="24"> Jupyter</div>
-                        <div class="tech-card-back">Jupyter</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.worldvectorlogo.com/logos/solidworks-logo-1.svg" alt="Solidworks" width="24"> Solidworks</div>
-                        <div class="tech-card-back">Solidworks</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" width="24"> Matplotlib</div>
-                        <div class="tech-card-back">Matplotlib</div>
-                    </div>
-                </div>
-                <div class="tech-card-container">
-                    <div class="tech-card">
-                        <div class="tech-card-front"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit" width="24"> Streamlit</div>
-                        <div class="tech-card-back">Streamlit</div>
-                    </div>
-                </div>
-
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"><span>PyTorch</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn"><span>Scikit-learn</span></div>
+                <div class="tech-item"><img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"><span>VS Code</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman"><span>Postman</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB"><span>MATLAB</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse"><span>Eclipse</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter"><span>Jupyter</span></div>
+                <div class="tech-item"><img src="https://cdn.worldvectorlogo.com/logos/solidworks-logo-1.svg" alt="Solidworks"><span>Solidworks</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib"><span>Matplotlib</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit"><span>Streamlit</span></div>
             </div>
         </div>
         <!-- =============================================== -->
