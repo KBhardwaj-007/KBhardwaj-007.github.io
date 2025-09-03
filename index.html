@@ -336,17 +336,17 @@
       border-radius: 5px;
     }
     
-    /* ===== START: NEW GALAXY-THEME Tech Interests Section ===== */
+    /* Tech Interests Section Styling */
     .tech .tech-grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 15px; /* Smaller gap */
+      gap: 15px;
       margin-top: 30px;
     }
     .tech-item {
-        flex-basis: 130px; /* Smaller width */
-        height: 50px;     /* Smaller height */
+        flex-basis: 130px;
+        height: 50px;
         padding: 0 10px;
         background: #1a1a1e;
         border: 1px solid #333;
@@ -355,13 +355,14 @@
         align-items: center;
         justify-content: center;
         gap: 8px;
-        font-size: 0.9rem; /* Smaller font */
+        font-size: 0.9rem;
         font-weight: 500;
         color: #ccc;
-        position: relative; /* For the pseudo-element */
-        overflow: hidden;   /* To contain the glow effect */
+        position: relative;
+        overflow: hidden;
         transition: all 0.3s ease-in-out;
         cursor: pointer;
+        will-change: transform, box-shadow;
     }
     .tech-item img {
         width: 20px;
@@ -373,13 +374,12 @@
         border-color: var(--primary-color);
         box-shadow: 0 0 20px rgba(255, 196, 0, 0.5);
     }
-    /* The galaxy pattern pseudo-element */
     .tech-item::before {
         content: '';
         position: absolute;
         top: 50%;
         left: 50%;
-        width: 250px; /* Make it large enough to cover the scaled-up box */
+        width: 250px;
         height: 250px;
         background-image: radial-gradient(circle, rgba(255,196,0,0.5) 0%, rgba(156,39,176,0.3) 40%, rgba(4,4,4,0) 70%);
         transform: translate(-50%, -50%) scale(0);
@@ -391,15 +391,43 @@
         transform: translate(-50%, -50%) scale(1);
         opacity: 1;
     }
-    /* ===== END: NEW GALAXY-THEME Tech Interests Section ===== */
 
+    /* ===== START: NEW Interests Section Styling ===== */
     .interests .icon-box {
-      display: flex; align-items: center; padding: 20px; background: rgba(255, 255, 255, 0.08);
-      transition: ease-in-out 0.3s; border-radius: 8px;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid transparent;
+      border-radius: 8px;
+      transition: all 0.3s ease-in-out;
+      will-change: transform, box-shadow, border-color;
     }
-    .interests .icon-box i { font-size: 32px; padding-right: 10px; line-height: 1; }
-    .interests .icon-box h3 { font-weight: 700; margin: 0; padding: 0; line-height: 1; font-size: 16px; }
-    .interests .icon-box:hover { background: rgba(255, 255, 255, 0.12); }
+    .interests .icon-box i {
+      font-size: 32px;
+      padding-right: 10px;
+      line-height: 1;
+      color: var(--interest-color); /* Use CSS variable for color */
+      transition: transform 0.3s ease-in-out;
+    }
+    .interests .icon-box h3 {
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      font-size: 16px;
+    }
+    .interests .icon-box:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--interest-color);
+      transform: translateY(-5px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2), 0 0 20px var(--interest-color);
+    }
+    .interests .icon-box:hover i {
+      transform: scale(1.2) rotate(10deg);
+    }
+    /* ===== END: NEW Interests Section Styling ===== */
+
 
     /* Resume Section */
     .resume .section-title p { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
@@ -601,7 +629,6 @@
             </div>
         </div>
 
-        <!-- ======= UPDATED TECH-INTERESTS SECTION ======= -->
         <div class="tech container-fluid">
             <div class="section-title"><h2>TECH-INTERESTS</h2></div>
             <div class="tech-grid" data-aos="fade-up">
@@ -628,18 +655,40 @@
                 <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit"><span>Streamlit</span></div>
             </div>
         </div>
-        <!-- =============================================== -->
-
+        
+        <!-- ======= UPDATED INTERESTS SECTION ======= -->
         <div class="interests container-fluid" style="margin-top: 60px;">
             <div class="section-title"><h2>Interests</h2></div>
             <div class="row">
-                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in"><i class="ri-code-s-slash-line" style="color: #ffbb2c;"></i><h3>Coding</h3></div></div>
-                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in" data-aos-delay="100"><i class="ri-music-2-line" style="color: #5578ff;"></i><h3>Music</h3></div></div>
-                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in" data-aos-delay="200"><i class="ri-gamepad-line" style="color: #e80368;"></i><h3>Gaming</h3></div></div>
-                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in" data-aos-delay="300"><i class="ri-movie-2-line" style="color: #e361ff;"></i><h3>Movies/Series</h3></div></div>
-                <div class="col-lg-3 col-md-4 mt-4"><div class="icon-box" data-aos="zoom-in" data-aos-delay="400"><i class="ri-robot-line" style="color: #47aeff;"></i><h3>New Technologies</h3></div></div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #ffbb2c;">
+                        <i class="ri-code-s-slash-line"></i><h3>Coding</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="100" style="--interest-color: #5578ff;">
+                        <i class="ri-music-2-line"></i><h3>Music</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="200" style="--interest-color: #e80368;">
+                        <i class="ri-gamepad-line"></i><h3>Gaming</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="300" style="--interest-color: #e361ff;">
+                        <i class="ri-movie-2-line"></i><h3>Movies/Series</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="400" style="--interest-color: #47aeff;">
+                        <i class="ri-robot-line"></i><h3>New Technologies</h3>
+                    </div>
+                </div>
             </div>
         </div>
+        <!-- ======================================= -->
+
     </section>
 
     <section id="resume" class="page-section">
