@@ -6,28 +6,23 @@
   <title>Kuldeep Bhardwaj | Backend Developer</title>
   <meta name="description" content="Welcome to the portfolio of Kuldeep Bhardwaj, a Backend Developer and IIT Delhi graduate showcasing projects, skills, and professional experience.">
   <meta name="keywords" content="Kuldeep Bhardwaj, Backend Developer, IIT Delhi, Python, Java, Machine Learning, Data Science, Portfolio">
-
   <!-- Favicon -->
   <link rel="icon" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/logo_1.jpeg?raw=true">
-
   <!-- Preload critical background images for smooth loading -->
   <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/wp4575277-4k-galaxy-wallpapers.jpg?raw=true">
   <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/about_background.jpeg?raw=true">
   <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Resume_background.jpeg?raw=true">
   <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Contact_background.jpeg?raw=true">
-
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
   <!-- Vendor CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
   <!-- Main CSS -->
   <style>
     /* Base Styles */
@@ -43,6 +38,12 @@
       color: var(--secondary-color);
       margin: 0;
       padding: 0;
+    }
+    p {
+      text-align: justify;
+    }
+    li {
+      text-align: justify;
     }
     a { color: var(--primary-color); text-decoration: none; }
     a:hover { color: #ffd54f; text-decoration: none; }
@@ -175,6 +176,7 @@
       background-position: center center;
     }
     .header-content { padding-left: 5%; position: relative; z-index: 2; }
+    .header-content p { font-size: 1.5rem; text-align: left;} /* Keep header text left-aligned */
     #header h1 { font-size: 64px; margin: 0; padding: 0; line-height: 1; font-weight: 700; }
     #header h1 .im { color: rgba(255, 255, 255, 0.7); }
     #header h1 .name { 
@@ -191,6 +193,7 @@
       position: relative; 
       cursor: pointer; 
       transition: color 0.3s ease-in-out;
+      font-size: 1.1rem;
     }
     #header .navbar a:hover,
     #header .navbar a.active {
@@ -223,7 +226,7 @@
     /* General Section Styling */
     .page-section {
       position: relative;
-      padding: 80px 5% 60px 5%;
+      padding: 50px 5% 60px 5%;
       display: none; /* Hide sections by default */
       min-height: 100vh; /* Allow section to grow, enabling scrolling */
       background-size: cover;
@@ -255,7 +258,7 @@
       left: calc(100% + 20px);
       transform: translateY(-50%);
     }
-    .section-title p { margin-bottom: 0; font-size: 1.2rem; }
+    .section-title p { margin-bottom: 0; font-size: 1.2rem; text-align: left;} /* Keep section titles left-aligned */
     .page-section::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
       background-color: rgba(4, 4, 4, 0.75); z-index: 1;
@@ -283,6 +286,10 @@
       color: #ccc;
       text-transform: uppercase;
     }
+    
+    #about .section-title h2 { margin-bottom: 0;}
+    #about .skills .section-title h2 { margin-bottom: 20px; }
+
     #about .section-title p {
         font-size: 2rem;
         font-weight: 700;
@@ -430,10 +437,27 @@
 
 
     /* Resume Section */
-    .resume .section-title p { font-size: 1.8rem; text-transform: uppercase; letter-spacing: 1px; }
+    #resume .section-title h2 { font-size: 1rem; font-weight: 500; color: #ccc; text-transform: uppercase; }
+    #resume .section-title h2 { margin-bottom: 0;}
+    #resume .section-title p { font-size: 2rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: normal;}
+    #resume .section-title p { margin-bottom: 20px; }
     .resume .resume-title { font-size: 26px; font-weight: 700; margin-top: 20px; margin-bottom: 20px; color: #fff; }
     .resume .resume-item {
       padding: 0 0 20px 20px; margin-top: -2px; border-left: 2px solid rgba(255, 255, 255, 0.2); position: relative;
+    }
+    .resume .resume-item .location-item {
+      list-style: none;
+      position: relative;
+    }
+    .resume .resume-item .location-item::before {
+      content: '\f3e9';
+      font-family: 'bootstrap-icons';
+      font-weight: normal;
+
+      position: absolute;
+      left: -20px;
+      top: 2px;
+      color: var(--primary-color);
     }
     .resume .resume-item h4 {
       line-height: 18px; font-size: 18px; font-weight: 600; text-transform: uppercase;
@@ -441,17 +465,64 @@
     }
     .resume .resume-item h5 {
       font-size: 16px; background: rgba(255, 255, 255, 0.15); padding: 5px 15px;
-      display: inline-block; font-weight: 600; margin-bottom: 10px;
+      display: inline-block; font-weight: 600; margin-bottom: 10px;       
+      border-radius: 50px;
     }
     .resume .resume-item::before {
       content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50px;
       left: -9px; top: 0; background: var(--primary-color); border: 2px solid var(--primary-color);
     }
+    
+    /* --- START: Creative CTA Button Animation --- */
     .cta-button {
-      background: var(--primary-color); color: #000; padding: 10px 25px; border-radius: 5px;
-      text-decoration: none; font-weight: 600; transition: all 0.3s;
+      display: inline-flex; /* Use flexbox for alignment */
+      align-items: center; /* Vertically center the text and icon */
+      gap: 10px; /* Space between text and icon */
+      background: var(--primary-color);
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.4s ease-in-out;
+      position: relative; /* Needed for the shimmer effect */
+      overflow: hidden; /* Hides the shimmer effect outside the button */
+      border: 2px solid transparent;
     }
-    .cta-button:hover { background: #ffd54f; }
+    .cta-button span {
+      transition: transform 0.3s ease-in-out;
+    }
+    .cta-button i {
+      font-size: 1.2rem;
+      transition: transform 0.3s ease-in-out;
+    }
+    /* Hover Effects */
+    .cta-button:hover {
+      background: #ffc400;
+      transform: translateY(-3px); /* A slight lift */
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(255, 196, 0, 0.6);
+      border-color: #ffd54f;
+      color: #000; /* <-- ADDED THIS LINE to keep text black on hover */
+    }
+    .cta-button:hover i {
+      transform: translateY(-4px); /* Animate the icon UPWARDS */
+    }
+    /* Shimmer Effect */
+    .cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 75%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: left 0.6s ease-in-out;
+      transform: skewX(-25deg); /* Angled shimmer */
+    }
+    .cta-button:hover::before {
+      left: 150%; /* Move shimmer across the button */
+    }
+    /* --- END: Creative CTA Button Animation --- */
     
     /* Contact Section */
     .contact .info-box {
@@ -463,7 +534,7 @@
       float: left; background: rgba(255, 255, 255, 0.1);
     }
     .contact .info-box h3 { font-size: 20px; color: #fff; font-weight: 700; margin: 10px 0 10px 68px; }
-    .contact .info-box p { padding: 0; color: #ccc; line-height: 24px; font-size: 14px; margin: 0 0 0 68px; }
+    .contact .info-box p { padding: 0; color: #ccc; line-height: 24px; font-size: 14px; margin: 0 0 0 68px; text-align: left;}
     .contact .php-email-form { padding: 30px; background: rgba(255, 255, 255, 0.08); border-radius: 8px; }
     .contact .php-email-form input, .contact .php-email-form textarea {
       background: rgba(0, 0, 0, 0.3); border: 1px solid #333; padding: 10px;
@@ -479,9 +550,7 @@
     @keyframes typedjsBlink { 50% { opacity: 0.0; } }
   </style>
 </head>
-
 <body>
-
   <!-- ===== START: Preloader HTML ===== -->
   <div id="preloader">
     <div class="preloader-container">
@@ -492,9 +561,9 @@
     </div>
   </div>
   <!-- ===== END: Preloader HTML ===== -->
-
   <nav id="top-nav">
-    <a class="my-name nav-link" data-target="#home">Kuldeep Bhardwaj</a>
+    <!-- <a class="my-name nav-link" data-target="#home">Kuldeep Bhardwaj</a> -->
+    <a class="my-name" href="">Kuldeep Bhardwaj</a>
     <ul class="nav-links">
       <li><a class="nav-link" data-target="#home">Home</a></li>
       <li><a class="nav-link" data-target="#about">About</a></li>
@@ -502,7 +571,6 @@
       <li><a class="nav-link" data-target="#contact">Contact</a></li>
     </ul>
   </nav>
-
   <header id="header">
     <div class="header-content">
       <p>Hey, there! 👋</p>
@@ -524,7 +592,6 @@
       </div>
     </div>
   </header>
-
   <main>
     <section id="about" class="page-section">
         <div class="about-me">
@@ -545,236 +612,284 @@
                 </div>
             </div>
         </div>
-        
-        <div class="skills container-fluid" style="margin-top: 60px; margin-bottom: 60px;">
-            <div class="section-title"><h2>Skills</h2></div>
-            <div class="row skills-content">
-              <div class="col-lg-6" data-aos="fade-up">
-                <div class="progress">
-                  <span class="skill">Python <i class="val">95%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">Java <i class="val">60%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">C++ <i class="val">70%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">SQL <i class="val">70%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">AWS (EC2, S3, Lambda) <i class="val">80%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">Git & GitHub <i class="val">85%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
+
+<div class="skills container-fluid" style="margin-top: 60px; margin-bottom: 60px;">
+        <div class="section-title"><h2>Skills</h2></div>
+        <div class="row skills-content">
+          <div class="col-lg-6" data-aos="fade-up">
+            <div class="progress">
+              <span class="skill">Python <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
+            </div>
+            <div class="progress">
+              <span class="skill">Java <i class="val">60%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">C++ <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">SQL <i class="val">70%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">AWS (EC2, S3, Lambda) <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">Git & GitHub <i class="val">85%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="progress">
+              <span class="skill">TensorFlow & PyTorch <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">Scikit-learn <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">Pandas & NumPy <i class="val">95%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">Streamlit <i class="val">80%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+              <span class="skill">MongoDB <i class="val">75%</i></span>
+              <div class="progress-bar-wrap">
+                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+            <div class="progress">
+                <span class="skill">Postman <i class="val">80%</i></span>
+                <div class="progress-bar-wrap">
+                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <div class="tech container-fluid">
+        <div class="section-title"><h2>TECH-INTERESTS</h2></div>
+        <div class="tech-grid" data-aos="fade-up">
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"><span>PyTorch</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn"><span>Scikit-learn</span></div>
+            <div class="tech-item"><img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"><span>VS Code</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman"><span>Postman</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB"><span>MATLAB</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse"><span>Eclipse</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter"><span>Jupyter</span></div>
+            <div class="tech-item"><img src="https://cdn.worldvectorlogo.com/logos/solidworks-logo-1.svg" alt="Solidworks"><span>Solidworks</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib"><span>Matplotlib</span></div>
+            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit"><span>Streamlit</span></div>
+        </div>
+    </div>
+    
+    <!-- ======= UPDATED INTERESTS SECTION ======= -->
+    <div class="interests container-fluid" style="margin-top: 60px;">
+        <div class="section-title"><h2>Interests</h2></div>
+        <div class="row">
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #ffbb2c;">
+                    <i class="ri-code-s-slash-line"></i><h3>Coding</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #5578ff;">
+                    <i class="ri-music-2-line"></i><h3>Music</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #e80368;">
+                    <i class="ri-gamepad-line"></i><h3>Gaming</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #e361ff;">
+                    <i class="ri-movie-2-line"></i><h3>Movies/Series</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 mt-4">
+                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #47aeff;">
+                    <i class="ri-robot-line"></i><h3>New Technologies</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ======================================= -->
+
+</section>
+
+    <!-- ======= Resume Section ======= -->
+    <section id="resume" class="page-section resume">
       
-              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <div class="progress">
-                  <span class="skill">TensorFlow & PyTorch <i class="val">75%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">Scikit-learn <i class="val">80%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">Pandas & NumPy <i class="val">95%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">Streamlit <i class="val">80%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                  <span class="skill">MongoDB <i class="val">75%</i></span>
-                  <div class="progress-bar-wrap">
-                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                  </div>
-                </div>
-                <div class="progress">
-                    <span class="skill">Postman <i class="val">80%</i></span>
-                    <div class="progress-bar-wrap">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                    </div>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <div class="tech container-fluid">
-            <div class="section-title"><h2>TECH-INTERESTS</h2></div>
-            <div class="tech-grid" data-aos="fade-up">
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"><span>PyTorch</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn"><span>Scikit-learn</span></div>
-                <div class="tech-item"><img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"><span>VS Code</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman"><span>Postman</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB"><span>MATLAB</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse"><span>Eclipse</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter"><span>Jupyter</span></div>
-                <div class="tech-item"><img src="https://cdn.worldvectorlogo.com/logos/solidworks-logo-1.svg" alt="Solidworks"><span>Solidworks</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib"><span>Matplotlib</span></div>
-                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit"><span>Streamlit</span></div>
-            </div>
-        </div>
-        
-        <!-- ======= UPDATED INTERESTS SECTION ======= -->
-        <div class="interests container-fluid" style="margin-top: 60px;">
-            <div class="section-title"><h2>Interests</h2></div>
-            <div class="row">
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #ffbb2c;">
-                        <i class="ri-code-s-slash-line"></i><h3>Coding</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="100" style="--interest-color: #5578ff;">
-                        <i class="ri-music-2-line"></i><h3>Music</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="200" style="--interest-color: #e80368;">
-                        <i class="ri-gamepad-line"></i><h3>Gaming</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="300" style="--interest-color: #e361ff;">
-                        <i class="ri-movie-2-line"></i><h3>Movies/Series</h3>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-4 mt-4">
-                    <div class="icon-box" data-aos="zoom-in" data-aos-delay="400" style="--interest-color: #47aeff;">
-                        <i class="ri-robot-line"></i><h3>New Technologies</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- ======================================= -->
-
-    </section>
-
-    <section id="resume" class="page-section">
-        <div class="section-title" style="margin-top: 60px;">
+        <div class="section-title v2-title" style="margin-top: 60px;">
             <h2>Resume</h2>
             <p>CHECK MY RESUME</p>
         </div>
+  
         <div class="row">
-            <div class="col-lg-6" data-aos="fade-up">
-                <h3 class="resume-title">Summary</h3>
-                <div class="resume-item pb-0">
-                    <h4>Kuldeep Bhardwaj</h4>
-                    <p><em>Detail-oriented and motivated B.Tech graduate from IIT Delhi with a strong foundation in Electrical Engineering and Computer Science. Proficient in backend development, machine learning, and data analysis, with hands-on experience in building robust applications.</em></p>
-                </div>
-                <h3 class="resume-title">Education</h3>
-                <div class="resume-item">
-                    <h4>B.Tech in Electrical Engineering</h4>
-                    <h5>2018 - 2023 (Expected)</h5>
-                    <p><em>Indian Institute of Technology (IIT), Delhi</em></p>
-                </div>
-                <h3 class="resume-title">Scholastic Achievements</h3>
-                <div class="resume-item">
-                    <h4>Joint Entrance Examination (JEE)</h4>
-                    <ul>
-                        <li><b>JEE Advanced (2018):</b> Secured AIR 2991 out of 2 lakh students.</li>
-                        <li><b>JEE Mains (2018):</b> Secured AIR 7692 out of 12 lakh students.</li>
-                    </ul>
-                </div>
+          <div class="col-lg-6" data-aos="fade-up">
+            <h3 class="resume-title">Summary</h3>
+            <div class="resume-item pb-0">
+              <h4>Kuldeep Bhardwaj</h4>
+              <p><em>Detail-oriented and motivated B.Tech graduate from IIT Delhi with a strong foundation in Electrical Engineering and Computer Science. Proficient in backend development, machine learning, and data analysis, with hands-on experience in building robust applications. Seeking to leverage skills in Python, Java, and cloud technologies to solve complex problems and contribute to a dynamic team.</em></p>
+              <ul>
+                <li class="location-item">Mount Abu, Rajasthan | INDIA</li>
+              </ul>
             </div>
-            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                <h3 class="resume-title">Professional Experience</h3>
-                <div class="resume-item">
-                    <h4>Data Analyst Intern</h4>
-                    <h5>May 2021 - July 2021</h5>
-                    <p><em>AdCity Mart Pvt. Ltd. | Delhi, India</em></p>
-                    <ul>
-                        <li>Built a BERT-based NLP pipeline boosting sentiment detection accuracy by 35%.</li>
-                        <li>Automated agent performance tracking, reducing manual analysis time by 70%.</li>
-                        <li>Deployed scalable workflows with AWS, streamlining data pipelines.</li>
-                    </ul>
-                </div>
-                <h3 class="resume-title">Projects</h3>
-                <div class="resume-item">
-                    <h4>Personalized Retail Recommendation System</h4>
-                    <p><em>Built a hybrid system integrating Collaborative Filtering, Matrix Factorization, and Content-Based ML on 100K+ records.</em></p>
-                </div>
-                <div class="resume-item">
-                    <h4>Credit Card Fraud Detection</h4>
-                    <p><em>Constructed a deep learning fraud detection system using PyTorch/TensorFlow, applying SHAP/LIME for model interpretability.</em></p>
-                </div>
+  
+            <h3 class="resume-title">Education</h3>
+            <div class="resume-item">
+              <h4>B.Tech in Electrical Engineering (Power &amp; Automation)</h4>
+              <h5>2018 - 2023</h5>
+              <p><em>Indian Institute of Technology (IIT), Delhi</em></p>
+              <p>CGPA: 5.55</p>
+              <p><strong>Relevant Courses:</strong> Data Structures & Algorithms, Digital Signal Processing, Machine Learning, Digital Electronics, Probability & Stochastic Processes</p>
             </div>
+            <div class="resume-item">
+              <h4>Senior Secondary School (RBSE)</h4>
+              <h5>2017</h5>
+              <p><em>Shiv Jyoti Senior Secondary School, Kota</em></p>
+              <p>Percentage: 87.60%</p>
+            </div>
+            <div class="resume-item">
+              <h4>Secondary School (RBSE)</h4>
+              <h5>2015</h5>
+              <p><em>Shree Rajeshwar Vidya Mandir, Mandar</em></p>
+              <p>Percentage: 93.17% | Secured 5th rank in district</p>
+            </div>
+  
+            <h3 class="resume-title">Scholastic Achievements</h3>
+             <div class="resume-item">
+               <h4>Joint Entrance Examination (JEE)</h4>
+               <ul>
+                 <li><b>JEE Advanced (2018):</b> Secured AIR 2991 out of 2 lakh students</li>
+                 <li><b>JEE Mains (2018):</b> Secured AIR 7692 out of 12 lakh students</li>
+               </ul>
+             </div>
+          </div>
+          
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <h3 class="resume-title">Professional Experience</h3>
+            <div class="resume-item">
+              <h4>Data Analyst Intern</h4>
+              <h5>May 2021 - July 2021</h5>
+              <p><em>AdCity Mart Pvt. Ltd. | Delhi, India</em></p>
+              <ul>
+                <li>Built a <b>BERT-based NLP pipeline</b> for <b>topic modeling</b> of customer feedback, boosting sentiment detection accuracy by 35%</li>
+                <li>Automated <b>agent performance tracking</b> using <b>Pandas &amp; NumPy</b>, reducing manual analysis time by 70%</li>
+                <li>Deployed scalable workflows with <b>AWS (S3, Lambda)</b>, streamlining data pipelines and improving data handling efficiency</li>
+                <li>Engineered a <b>like/dislike feedback system</b>, increasing customer feedback by 60% and cutting unresolved queries by 25%</li>
+              </ul>
+            </div>
+            
+            <h3 class="resume-title">Projects</h3>
+            <div class="resume-item">
+              <h4>Personalized Retail Product Recommendation System</h4>
+              <span class="badge rounded-pill bg-primary">Machine Learning</span>
+              <span class="badge rounded-pill bg-success">Recommender Systems</span>
+              <ul>
+                <li>Built a hybrid system integrating Collaborative Filtering, Matrix Factorization, and Content-Based ML</li>
+                <li>Developed a modular <b>ML pipeline</b> for preprocessing, training, and evaluation on 100K+ records</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Credit Card Fraud Detection</h4>
+              <span class="badge rounded-pill bg-primary">Deep Learning</span>
+              <span class="badge rounded-pill bg-success">Model Interpretability</span>
+              <ul>
+                <li>Constructed a robust deep learning fraud detection system using <b>PyTorch/TensorFlow</b> on 100K+ transactions</li>
+                <li>Addressed &lt;1% class imbalance using <b>SMOTE</b> and applied SHAP/LIME for model interpretability</li>
+                <li>Evaluated models with <b>ROC-AUC</b> and Precision-Recall and applied <b>SHAP/LIME</b> to explain key fraud drivers</li>
+              </ul>
+            </div>
+            <div class="resume-item">
+              <h4>Urban Mobility Data Analysis</h4>
+              <span class="badge rounded-pill bg-primary">Time-Series Forecasting</span>
+              <ul>
+                <li>Analyzed Uber ride data to uncover <b>spatiotemporal</b> demand patterns, peak hours, and location trends</li>
+                <li>Built <b>time-series forecasting models</b> with a <b>Streamlit</b> dashboard to predict and visualize ride demands</li>
+                <li>Implemented data pipelines with <b>Pandas and SQL</b> for cleaning, storage, querying, and geospatial visualization for insights</li>
+              </ul>
+            </div>
+  
+          </div>
         </div>
-        <div style="text-align: center; margin-top: 40px;">
-            <a href="Kuldeep_Bhardwaj_Resume.pdf" target="_blank" class="cta-button">Download Full Resume (PDF)</a>
-        </div>
+         <div style="text-align: center; margin-top: 40px;">
+          <a href="Kuldeep_Bhardwaj_Resume.pdf" target="_blank" class="cta-button">
+            <span>View Full Resume</span>
+            <i class="bi bi-download"></i>
+          </a>
+         </div>
     </section>
+    <!-- End Resume Section -->
 
-    <section id="contact" class="page-section">
-        <div class="section-title" style="margin-top: 60px;">
-            <h2>Contact</h2>
-            <p>Contact Me</p>
-        </div>
-        <div class="row mt-2">
-            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-map"></i><h3>My Location</h3><p>Delhi, India 🇮🇳 | <span id="live-time"></span></p></div></div>
-            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-envelope"></i><h3>Email Me</h3><p><a href="mailto:kuldeep.j.bhardwaj@gmail.com">kuldeep.j.bhardwaj@gmail.com</a></p></div></div>
-            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-phone-call"></i><h3>Call Me</h3><p>+91 77268 16102</p></div></div>
-        </div>
-        <div class="mt-5">
-            <h3 class="resume-title">Write Message</h3>
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSe_.../formResponse" method="post" role="form" class="php-email-form" target="_blank">
-                <div class="row">
-                    <div class="col-md-6 form-group"><input type="text" name="entry.1767071648" class="form-control" placeholder="Your Name" required></div>
-                    <div class="col-md-6 form-group mt-3 mt-md-0"><input type="email" name="entry.413679677" class="form-control" placeholder="Your Email" required></div>
-                </div>
-                <div class="form-group mt-3"><input type="text" name="entry.1905060320" class="form-control" placeholder="Subject" required></div>
-                <div class="form-group mt-3"><textarea name="entry.1538613288" class="form-control" rows="5" placeholder="Message" required></textarea></div>
-                <div class="text-center mt-3"><button type="submit">Send Message</button></div>
-            </form>
-        </div>
-    </section>
+<section id="contact" class="page-section">
+    <div class="section-title" style="margin-top: 60px;">
+        <h2>Contact</h2>
+        <p>Contact Me</p>
+    </div>
+    <div class="row mt-2">
+        <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-map"></i><h3>My Location</h3><p>Delhi, India 🇮🇳 | <span id="live-time"></span></p></div></div>
+        <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-envelope"></i><h3>Email Me</h3><p><a href="mailto:kuldeep.j.bhardwaj@gmail.com">kuldeep.j.bhardwaj@gmail.com</a></p></div></div>
+        <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-phone-call"></i><h3>Call Me</h3><p>+91 77268 16102</p></div></div>
+    </div>
+    <div class="mt-5">
+        <h3 class="resume-title">Write Message</h3>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSe_.../formResponse" method="post" role="form" class="php-email-form" target="_blank">
+            <div class="row">
+                <div class="col-md-6 form-group"><input type="text" name="entry.1767071648" class="form-control" placeholder="Your Name" required></div>
+                <div class="col-md-6 form-group mt-3 mt-md-0"><input type="email" name="entry.413679677" class="form-control" placeholder="Your Email" required></div>
+            </div>
+            <div class="form-group mt-3"><input type="text" name="entry.1905060320" class="form-control" placeholder="Subject" required></div>
+            <div class="form-group mt-3"><textarea name="entry.1538613288" class="form-control" rows="5" placeholder="Message" required></textarea></div>
+            <div class="text-center mt-3"><button type="submit">Send Message</button></div>
+        </form>
+    </div>
+</section>
   </main>
-
   <!-- Vendor JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-  
   <!-- Main JS -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -828,6 +943,8 @@
             animateSkills();
         }
 
+        window.scrollTo(0, 0);
+
         updateActiveLink(targetId);
       };
 
@@ -877,6 +994,5 @@
       showPage('#home');
     });
   </script>
-
 </body>
 </html>
