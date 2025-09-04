@@ -6,13 +6,19 @@
   <title>Kuldeep Bhardwaj | Backend Developer</title>
   <meta name="description" content="Welcome to the portfolio of Kuldeep Bhardwaj, a Backend Developer and IIT Delhi graduate showcasing projects, skills, and professional experience.">
   <meta name="keywords" content="Kuldeep Bhardwaj, Backend Developer, IIT Delhi, Python, Java, Machine Learning, Data Science, Portfolio">
+
+  <!-- ===== START: WATERMARK 1 (Custom Meta Tag) ===== -->
+  <meta name="signature" content="KB-Portfolio-v1-Auth-ID-a7b3c9d8e2f1">
+  <!-- ===== END: WATERMARK 1 ===== -->
+
+
   <!-- Favicon -->
-  <link rel="icon" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/logo_1.jpeg?raw=true">
+  <link rel="icon" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/logo.jpeg?raw=true">
   <!-- Preload critical background images for smooth loading -->
-  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/wp4575277-4k-galaxy-wallpapers.jpg?raw=true">
-  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/about_background.jpeg?raw=true">
-  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Resume_background.jpeg?raw=true">
-  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Contact_background.jpeg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/home_background.jpg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/about_background.jpeg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Resume_background.jpeg?raw=true">
+  <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Contact_background.jpeg?raw=true">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -171,7 +177,7 @@
       align-items: center;
       overflow: hidden;
       background-color: #040918; /* Fallback color */
-      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/wp4575277-4k-galaxy-wallpapers.jpg?raw=true');
+      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/home_background.jpg?raw=true');
       background-size: cover;
       background-position: center center;
     }
@@ -238,16 +244,35 @@
       from { opacity: 0; }
       to { opacity: 1; }
     }
+    
+    /* --- START: UPDATED & UNIFIED SECTION TITLE STYLES --- */
     .section-title h2 {
-      font-size: 32px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      padding-bottom: 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #ccc;
+      text-transform: uppercase;
+      margin-bottom: 0;
       position: relative;
-      color: #fff;
-      display: inline-block;
+      padding-bottom: 0;
+      display: inline-block; /* Ensures the ::after pseudo-element is positioned correctly */
     }
-    .section-title h2::after {
+
+    #about .section-title p,
+    #resume .section-title p,
+    #contact .section-title p {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: normal;
+      margin-bottom: 20px;
+    }
+    
+    /* --- START: RESTORED TITLE LINE --- */
+    .about-me > .section-title > h2::after,
+    #about .section-title.v2-title > h2::after,
+    #resume .section-title.v2-title > h2::after,
+    #contact .section-title.v2-title > h2::after {
       content: '';
       position: absolute;
       display: block;
@@ -258,7 +283,13 @@
       left: calc(100% + 20px);
       transform: translateY(-50%);
     }
-    .section-title p { margin-bottom: 0; font-size: 1.2rem; text-align: left;} /* Keep section titles left-aligned */
+    /* --- END: RESTORED TITLE LINE --- */
+    
+    .section-title p { 
+      margin-bottom: 0; 
+      text-align: left;
+    }
+    
     .page-section::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
       background-color: rgba(4, 4, 4, 0.75); z-index: 1;
@@ -268,34 +299,18 @@
     /* Section Backgrounds with Fallbacks */
     #about {
       background-color: #1a1a2e;
-      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/about_background.jpeg?raw=true');
+      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/about_background.jpeg?raw=true');
     }
     #resume {
       background-color: #0d021a;
-      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Resume_background.jpeg?raw=true');
+      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Resume_background.jpeg?raw=true');
     }
     #contact {
       background-color: #0b1a2e;
-      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/Contact_background.jpeg?raw=true');
+      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Contact_background.jpeg?raw=true');
     }
     
-    /* About Section */
-    #about .section-title h2 {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #ccc;
-      text-transform: uppercase;
-    }
-    
-    #about .section-title h2 { margin-bottom: 0;}
-    #about .skills .section-title h2 { margin-bottom: 20px; }
-
-    #about .section-title p {
-        font-size: 2rem;
-        font-weight: 700;
-        color: #fff;
-        text-transform: uppercase;
-    }
+    /* About Section Specifics */
     .profile-photo {
         width: 250px;
         height: 250px;
@@ -435,12 +450,11 @@
     }
     /* ===== END: NEW Interests Section Styling ===== */
 
+    <!-- ===== START: WATERMARK 2 (Encoded Comment) ===== -->
+    <!-- Owner: Kuldeep Bhardwaj, SourceID: S0ItUE9SVEZPTElPLVYxLUFVVEgtSUQtYTdiM2M5ZDhlMmYx -->
+    <!-- ===== END: WATERMARK 2 ===== -->
 
     /* Resume Section */
-    #resume .section-title h2 { font-size: 1rem; font-weight: 500; color: #ccc; text-transform: uppercase; }
-    #resume .section-title h2 { margin-bottom: 0;}
-    #resume .section-title p { font-size: 2rem; font-weight: 700; color: #fff; text-transform: uppercase; letter-spacing: normal;}
-    #resume .section-title p { margin-bottom: 20px; }
     .resume .resume-title { font-size: 26px; font-weight: 700; margin-top: 20px; margin-bottom: 20px; color: #fff; }
     .resume .resume-item {
       padding: 0 0 20px 20px; margin-top: -2px; border-left: 2px solid rgba(255, 255, 255, 0.2); position: relative;
@@ -463,6 +477,16 @@
       line-height: 18px; font-size: 18px; font-weight: 600; text-transform: uppercase;
       color: var(--primary-color); margin-bottom: 10px;
     }
+    .resume .resume-item h4 a {
+      font-size: 16px;
+      vertical-align: middle;
+      margin-left: 10px;
+      color: var(--primary-color);
+      transition: color 0.3s;
+    }
+    .resume .resume-item h4 a:hover {
+      color: #fff;
+    }
     .resume .resume-item h5 {
       font-size: 16px; background: rgba(255, 255, 255, 0.15); padding: 5px 15px;
       display: inline-block; font-weight: 600; margin-bottom: 10px;       
@@ -475,9 +499,9 @@
     
     /* --- START: Creative CTA Button Animation --- */
     .cta-button {
-      display: inline-flex; /* Use flexbox for alignment */
-      align-items: center; /* Vertically center the text and icon */
-      gap: 10px; /* Space between text and icon */
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       background: var(--primary-color);
       color: #000;
       padding: 12px 30px;
@@ -485,8 +509,8 @@
       text-decoration: none;
       font-weight: 600;
       transition: all 0.4s ease-in-out;
-      position: relative; /* Needed for the shimmer effect */
-      overflow: hidden; /* Hides the shimmer effect outside the button */
+      position: relative;
+      overflow: hidden;
       border: 2px solid transparent;
     }
     .cta-button span {
@@ -496,18 +520,16 @@
       font-size: 1.2rem;
       transition: transform 0.3s ease-in-out;
     }
-    /* Hover Effects */
     .cta-button:hover {
       background: #ffc400;
-      transform: translateY(-3px); /* A slight lift */
+      transform: translateY(-3px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(255, 196, 0, 0.6);
       border-color: #ffd54f;
-      color: #000; /* <-- ADDED THIS LINE to keep text black on hover */
+      color: #000;
     }
     .cta-button:hover i {
-      transform: translateY(-4px); /* Animate the icon UPWARDS */
+      transform: translateY(-4px);
     }
-    /* Shimmer Effect */
     .cta-button::before {
       content: '';
       position: absolute;
@@ -517,10 +539,10 @@
       height: 100%;
       background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
       transition: left 0.6s ease-in-out;
-      transform: skewX(-25deg); /* Angled shimmer */
+      transform: skewX(-25deg);
     }
     .cta-button:hover::before {
-      left: 150%; /* Move shimmer across the button */
+      left: 150%;
     }
     /* --- END: Creative CTA Button Animation --- */
     
@@ -535,19 +557,249 @@
     }
     .contact .info-box h3 { font-size: 20px; color: #fff; font-weight: 700; margin: 10px 0 10px 68px; }
     .contact .info-box p { padding: 0; color: #ccc; line-height: 24px; font-size: 14px; margin: 0 0 0 68px; text-align: left;}
+    
     .contact .php-email-form { padding: 30px; background: rgba(255, 255, 255, 0.08); border-radius: 8px; }
     .contact .php-email-form input, .contact .php-email-form textarea {
       background: rgba(0, 0, 0, 0.3); border: 1px solid #333; padding: 10px;
       color: #fff; width: 100%; border-radius: 5px;
     }
-    .contact .php-email-form button[type="submit"] {
-      background: var(--primary-color); border: 0; padding: 10px 24px; color: #000;
-      transition: 0.4s; border-radius: 4px; font-weight: 600;
+    .contact .php-email-form input::placeholder,
+    .contact .php-email-form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+      opacity: 1; /* Override default browser opacity */
     }
+
+    /* --- START: GALAXY THEME BUTTON --- */
+    .contact .php-email-form button[type="submit"] {
+      position: relative;
+      overflow: hidden;
+      padding: 12px 30px;
+      font-weight: 600;
+      font-size: 16px;
+      color: #fff;
+      background: linear-gradient(45deg, #0c0c1e, #1a1a3a, #2a2a5f, #3c1a5b, #0c0c1e);
+      background-size: 400% 400%;
+      border: 1px solid rgba(173, 136, 255, 0.5);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.5s ease-in-out;
+      animation: galaxy-shimmer 20s linear infinite;
+      z-index: 1;
+    }
+
+    @keyframes galaxy-shimmer {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .contact .php-email-form button[type="submit"]:hover {
+      border-color: #ad88ff;
+      box-shadow: 0 0 15px #ad88ff, 0 0 25px #ad88ff, inset 0 0 5px rgba(255, 255, 255, 0.2);
+      animation-duration: 10s;
+    }
+    
+    .contact .php-email-form button[type="submit"]:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      animation: none;
+      box-shadow: none;
+    }
+
+    .contact .php-email-form button[type="submit"]::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 20px;
+      height: 300%;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.8) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: rotate(45deg) translateX(-500%);
+      transition: transform 1s ease-in-out;
+      z-index: 2;
+      opacity: 0.8;
+    }
+
+    .contact .php-email-form button[type="submit"]:hover:not(:disabled)::before {
+      transform: rotate(45deg) translateX(500%);
+    }
+    /* --- END: GALAXY THEME BUTTON --- */
+    
+    /* --- START: Added styles for two-column contact section --- */
+    .contact .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px; /* Space between the two columns */
+    }
+    .contact .contact-message,
+    .contact .php-email-form {
+      flex: 1; /* Allows columns to grow and shrink equally */
+      min-width: 300px; /* Ensures columns stack on smaller screens */
+    }
+    .contact .contact-message {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 30px;
+      border-radius: 8px;
+      color: #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .contact .contact-message h2 {
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+    .contact .contact-message p {
+      line-height: 1.6;
+      font-size: 15px;
+      text-align: left;
+    }
+    .contact .contact-message p:last-child {
+      margin-bottom: 0;
+    }
+    /* --- END: Added styles for two-column contact section --- */
+
+    /* --- START: COPYRIGHT STYLES --- */
+    .copyright {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #ccc;
+      font-size: 14px;
+    }
+    .copyright strong {
+      color: var(--primary-color);
+    }
+    /* --- END: COPYRIGHT STYLES --- */
     
     /* Typed.js Cursor */
     .typed-cursor { opacity: 1; animation: typedjsBlink 0.7s infinite; }
     @keyframes typedjsBlink { 50% { opacity: 0.0; } }
+
+    /* Media Queries for Responsive Design */
+    @media (max-width: 992px) {
+      #header {
+        background-attachment: scroll;
+      }
+      .page-section {
+        background-attachment: scroll;
+      }
+      #top-nav .nav-links {
+        margin-right: 2rem;
+        gap: 1rem;
+      }
+      .my-name {
+        margin-left: 2%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      #header h1 {
+        font-size: 48px;
+      }
+      #header h2 {
+        font-size: 20px;
+      }
+      #header .navbar ul {
+        gap: 15px;
+      }
+      .about-me > .section-title > h2::after,
+      #about .section-title.v2-title > h2::after,
+      #resume .section-title.v2-title > h2::after,
+      #contact .section-title.v2-title > h2::after {
+        width: 80px;
+        left: calc(100% + 15px);
+      }
+      .profile-photo {
+        width: 200px;
+        height: 200px;
+      }
+      .about-me .content {
+        text-align: center;
+      }
+      .about-me .content p {
+        text-align: justify;
+      }
+      .skills .col-lg-6 {
+        margin-bottom: 20px;
+      }
+      .contact .contact-container {
+        flex-direction: column;
+      }
+      #top-nav {
+        flex-direction: column;
+        padding: 0.5rem 0;
+      }
+      #top-nav .nav-links {
+        margin: 0.5rem 0 0 0;
+      }
+    }
+
+    @media (max-width: 576px) {
+      body {
+        font-size: 14px;
+      }
+      #header {
+        text-align: center;
+      }
+      .header-content {
+        padding: 0 5%;
+      }
+      .header-content p {
+        text-align: center;
+      }
+      #header .navbar ul {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      #header .social-links {
+        justify-content: center;
+      }
+      .section-title {
+        text-align: center;
+      }
+      .section-title h2 {
+        display: block;
+        text-align: center;
+      }
+      .about-me > .section-title > h2::after,
+      #about .section-title.v2-title > h2::after,
+      #resume .section-title.v2-title > h2::after,
+      #contact .section-title.v2-title > h2::after {
+        display: none;
+      }
+      .section-title p {
+        text-align: center;
+      }
+      .tech-item {
+        flex-basis: 100px;
+      }
+      .interests .icon-box {
+        justify-content: center;
+      }
+      .contact .info-box {
+        text-align: center;
+      }
+      .contact .info-box i.bx {
+        float: none;
+        margin-bottom: 10px;
+      }
+      .contact .info-box h3,
+      .contact .info-box p {
+        margin-left: 0;
+      }
+      .contact .info-box p {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
@@ -561,8 +813,8 @@
     </div>
   </div>
   <!-- ===== END: Preloader HTML ===== -->
+
   <nav id="top-nav">
-    <!-- <a class="my-name nav-link" data-target="#home">Kuldeep Bhardwaj</a> -->
     <a class="my-name" href="">Kuldeep Bhardwaj</a>
     <ul class="nav-links">
       <li><a class="nav-link" data-target="#home">Home</a></li>
@@ -571,6 +823,7 @@
       <li><a class="nav-link" data-target="#contact">Contact</a></li>
     </ul>
   </nav>
+
   <header id="header">
     <div class="header-content">
       <p>Hey, there! 👋</p>
@@ -587,11 +840,12 @@
       <div class="social-links">
         <a href="https://github.com/KBhardwaj-007" target="_blank" class="github" aria-label="GitHub"><i class="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/bhardwajk/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        <a href="mailto:kuldeep.j.bhardwaj@gmail.com" class="gmail" aria-label="Email"><i class="bi bi-envelope"></i></a>
+        <a href="mailto:bhardwajkuldeep002@gmail.com" class="gmail" aria-label="Email"><i class="bi bi-envelope"></i></a>
         <a href="Kuldeep_Bhardwaj_Resume.pdf" target="_blank" class="resume-dl" aria-label="Download Resume"><i class="bi bi-file-earmark-person"></i></a>
       </div>
     </div>
   </header>
+
   <main>
     <section id="about" class="page-section">
         <div class="about-me">
@@ -601,7 +855,7 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center" data-aos="fade-right">
-                    <img src="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/P_P.jpeg?raw=true" class="profile-photo" alt="Kuldeep Bhardwaj">
+                    <img src="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Professional_Photo.jpeg?raw=true" class="profile-photo" alt="Kuldeep Bhardwaj">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                     <h3>Backend Developer &amp; ML Enthusiast</h3>
@@ -613,159 +867,160 @@
             </div>
         </div>
 
-<div class="skills container-fluid" style="margin-top: 60px; margin-bottom: 60px;">
-        <div class="section-title"><h2>Skills</h2></div>
-        <div class="row skills-content">
-          <div class="col-lg-6" data-aos="fade-up">
-            <div class="progress">
-              <span class="skill">Python <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
+        <div class="skills container-fluid" style="margin-top: 60px; margin-bottom: 60px;">
+            <div class="section-title v2-title" style="margin-bottom: 30px;">
+                <h2>Skills</h2>
             </div>
-            <div class="progress">
-              <span class="skill">Java <i class="val">60%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">C++ <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">SQL <i class="val">70%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">AWS (EC2, S3, Lambda) <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Git & GitHub <i class="val">85%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="progress">
-              <span class="skill">TensorFlow & PyTorch <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Scikit-learn <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Pandas & NumPy <i class="val">95%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">Streamlit <i class="val">80%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-              <span class="skill">MongoDB <i class="val">75%</i></span>
-              <div class="progress-bar-wrap">
-                <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-              </div>
-            </div>
-            <div class="progress">
-                <span class="skill">Postman <i class="val">80%</i></span>
-                <div class="progress-bar-wrap">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="row skills-content">
+              <div class="col-lg-6" data-aos="fade-up">
+                <div class="progress">
+                  <span class="skill">Python <i class="val">95%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
                 </div>
+                <div class="progress">
+                  <span class="skill">Java <i class="val">60%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">C++ <i class="val">70%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">SQL <i class="val">70%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">AWS (EC2, S3, Lambda) <i class="val">80%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">Git & GitHub <i class="val">85%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+              </div>
+      
+              <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="progress">
+                  <span class="skill">TensorFlow & PyTorch <i class="val">75%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">Scikit-learn <i class="val">80%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">Pandas & NumPy <i class="val">95%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">Streamlit <i class="val">80%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                  <span class="skill">MongoDB <i class="val">75%</i></span>
+                  <div class="progress-bar-wrap">
+                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress">
+                    <span class="skill">Postman <i class="val">80%</i></span>
+                    <div class="progress-bar-wrap">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
-    </div>
 
-    <div class="tech container-fluid">
-        <div class="section-title"><h2>TECH-INTERESTS</h2></div>
-        <div class="tech-grid" data-aos="fade-up">
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"><span>PyTorch</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn"><span>Scikit-learn</span></div>
-            <div class="tech-item"><img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"><span>VS Code</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman"><span>Postman</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB"><span>MATLAB</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse"><span>Eclipse</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter"><span>Jupyter</span></div>
-            <div class="tech-item"><img src="https://cdn.worldvectorlogo.com/logos/solidworks-logo-1.svg" alt="Solidworks"><span>Solidworks</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib"><span>Matplotlib</span></div>
-            <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit"><span>Streamlit</span></div>
+        <div class="tech container-fluid">
+            <div class="section-title v2-title">
+                <h2>TECH-INTERESTS</h2>
+            </div>
+            <div class="tech-grid" data-aos="fade-up">
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><span>Python</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"><span>Java</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><span>C++</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch"><span>PyTorch</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg" alt="Scikit-learn"><span>Scikit-learn</span></div>
+                <div class="tech-item"><img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"><span>AWS</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><span>MySQL</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"><span>MongoDB</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><span>Git</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub"><span>GitHub</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode"><span>VS Code</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman"><span>Postman</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><span>NumPy</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas"><span>Pandas</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB"><span>MATLAB</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg" alt="Eclipse"><span>Eclipse</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original-wordmark.svg" alt="Jupyter"><span>Jupyter</span></div>
+                <div class="tech-item"><img src="https://cdn.worldvectorlogo.com/logos/solidworks-logo-1.svg" alt="Solidworks"><span>Solidworks</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib"><span>Matplotlib</span></div>
+                <div class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" alt="Streamlit"><span>Streamlit</span></div>
+            </div>
         </div>
-    </div>
     
-    <!-- ======= UPDATED INTERESTS SECTION ======= -->
-    <div class="interests container-fluid" style="margin-top: 60px;">
-        <div class="section-title"><h2>Interests</h2></div>
-        <div class="row">
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #ffbb2c;">
-                    <i class="ri-code-s-slash-line"></i><h3>Coding</h3>
-                </div>
+        <div class="interests container-fluid" style="margin-top: 60px;">
+            <div class="section-title v2-title">
+                <h2>Interests</h2>
             </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #5578ff;">
-                    <i class="ri-music-2-line"></i><h3>Music</h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #ffbb2c;">
+                        <i class="ri-code-s-slash-line"></i><h3>Coding</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #e80368;">
-                    <i class="ri-gamepad-line"></i><h3>Gaming</h3>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #5578ff;">
+                        <i class="ri-music-2-line"></i><h3>Music</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #e361ff;">
-                    <i class="ri-movie-2-line"></i><h3>Movies/Series</h3>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #e80368;">
+                        <i class="ri-gamepad-line"></i><h3>Gaming</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="col-lg-3 col-md-4 mt-4">
-                <div class="icon-box" data-aos="zoom-in" style="--interest-color: #47aeff;">
-                    <i class="ri-robot-line"></i><h3>New Technologies</h3>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #e361ff;">
+                        <i class="ri-movie-2-line"></i><h3>Movies/Series</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #47aeff;">
+                        <i class="ri-robot-line"></i><h3>New Technologies</h3>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ======================================= -->
-
-</section>
+    </section>
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="page-section resume">
-      
         <div class="section-title v2-title" style="margin-top: 60px;">
             <h2>Resume</h2>
             <p>CHECK MY RESUME</p>
         </div>
-  
         <div class="row">
           <div class="col-lg-6" data-aos="fade-up">
             <h3 class="resume-title">Summary</h3>
@@ -824,7 +1079,9 @@
             
             <h3 class="resume-title">Projects</h3>
             <div class="resume-item">
-              <h4>Personalized Retail Product Recommendation System</h4>
+              <h4>Personalized Retail Product Recommendation System
+                <a href="https://github.com/KBhardwaj-007/Personalized-Retail-Product-Recommendation-System" target="_blank" aria-label="View Project on GitHub"><i class="bi bi-box-arrow-up-right"></i></a>
+              </h4>
               <span class="badge rounded-pill bg-primary">Machine Learning</span>
               <span class="badge rounded-pill bg-success">Recommender Systems</span>
               <ul>
@@ -833,7 +1090,9 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4>Credit Card Fraud Detection</h4>
+              <h4>Credit Card Fraud Detection
+                <a href="https://github.com/KBhardwaj-007/Credit_Card_Fraud_Detection" target="_blank" aria-label="View Project on GitHub"><i class="bi bi-box-arrow-up-right"></i></a>
+              </h4>
               <span class="badge rounded-pill bg-primary">Deep Learning</span>
               <span class="badge rounded-pill bg-success">Model Interpretability</span>
               <ul>
@@ -843,7 +1102,9 @@
               </ul>
             </div>
             <div class="resume-item">
-              <h4>Urban Mobility Data Analysis</h4>
+              <h4>Urban Mobility Data Analysis
+                <a href="https://github.com/KBhardwaj-007/Uber-Data-Analysis" target="_blank" aria-label="View Project on GitHub"><i class="bi bi-box-arrow-up-right"></i></a>
+              </h4>
               <span class="badge rounded-pill bg-primary">Time-Series Forecasting</span>
               <ul>
                 <li>Analyzed Uber ride data to uncover <b>spatiotemporal</b> demand patterns, peak hours, and location trends</li>
@@ -851,7 +1112,6 @@
                 <li>Implemented data pipelines with <b>Pandas and SQL</b> for cleaning, storage, querying, and geospatial visualization for insights</li>
               </ul>
             </div>
-  
           </div>
         </div>
          <div style="text-align: center; margin-top: 40px;">
@@ -863,29 +1123,68 @@
     </section>
     <!-- End Resume Section -->
 
-<section id="contact" class="page-section">
-    <div class="section-title" style="margin-top: 60px;">
-        <h2>Contact</h2>
-        <p>Contact Me</p>
-    </div>
-    <div class="row mt-2">
-        <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-map"></i><h3>My Location</h3><p>Delhi, India 🇮🇳 | <span id="live-time"></span></p></div></div>
-        <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-envelope"></i><h3>Email Me</h3><p><a href="mailto:kuldeep.j.bhardwaj@gmail.com">kuldeep.j.bhardwaj@gmail.com</a></p></div></div>
-        <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-phone-call"></i><h3>Call Me</h3><p>+91 77268 16102</p></div></div>
-    </div>
-    <div class="mt-5">
-        <h3 class="resume-title">Write Message</h3>
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSe_.../formResponse" method="post" role="form" class="php-email-form" target="_blank">
-            <div class="row">
-                <div class="col-md-6 form-group"><input type="text" name="entry.1767071648" class="form-control" placeholder="Your Name" required></div>
-                <div class="col-md-6 form-group mt-3 mt-md-0"><input type="email" name="entry.413679677" class="form-control" placeholder="Your Email" required></div>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="page-section contact">
+        <div class="section-title v2-title" style="margin-top: 60px;">
+            <h2>CONTACT</h2>
+            <p>CONTACT ME</p>
+        </div>
+
+        <div class="row mt-2">
+            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-map"></i><h3>My Location</h3><p>Rajasthan, India 🇮🇳 | <span id="live-time"></span></p></div></div>
+            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-envelope"></i><h3>Email Me</h3><p><a href="mailto:bhardwajkuldeep002@gmail.com">bhardwajkuldeep002@gmail.com</a></p></div></div>
+            <div class="col-lg-4 col-md-6 mt-4"><div class="info-box"><i class="bx bx-phone-call"></i><h3>Call Me</h3><p>+91 77268 16102</p></div></div>
+        </div>
+
+        <div class="section-title v2-title" style="margin-top: 60px;">
+            <h2>CONNECT</h2>
+            <p>LEAVE A MESSAGE</p>
+        </div>
+
+        <div class="contact-container">
+            <!-- Left Column: Message Box -->
+            <div class="contact-message" data-aos="fade-right">
+                <h2>Hello there! 👋</h2>
+                <h3>Thanks for dropping by — it means a lot! 🙌</h3>
+                <h3>💡 Got questions, ideas, or just curious? I’m all ears! 🧏‍♂️✨</h3>
+                <h3>🤝 Open to collabs, feedback, or tech talk anytime! 🔧💬</h3>
+                <h3>📩 Slide into my inbox — let’s connect! 🚀💻</h3>
             </div>
-            <div class="form-group mt-3"><input type="text" name="entry.1905060320" class="form-control" placeholder="Subject" required></div>
-            <div class="form-group mt-3"><textarea name="entry.1538613288" class="form-control" rows="5" placeholder="Message" required></textarea></div>
-            <div class="text-center mt-3"><button type="submit">Send Message</button></div>
-        </form>
-    </div>
-</section>
+
+            <!-- Right Column: Contact Form -->
+            <div class="php-email-form" data-aos="fade-left">
+                <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfDqy7-EX4FKo9HUUlHtkJg0S_TBmMXbNN2LfBnnXvc2Rlppg/formResponse" method="post" role="form" target="hidden_iframe" onsubmit="handleFormSubmit()">
+                    <div class="row">
+                        <div class="col-md-6 form-group">
+                            <input type="text" name="entry.60701379" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" name="entry.1475755609" class="form-control" placeholder="Your Email" required>
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" name="entry.1008991053" class="form-control" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <textarea name="entry.1222746377" class="form-control" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="text-center mt-4">
+                        <button type="submit" id="submit-button">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="copyright">
+          Designed by KULDEEP BHARDWAJ
+        </div>
+
+    </section>
+    <!-- End Contact Section -->
+
+    <!-- Hidden iframe to handle form submission without redirect -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="handleFormSuccess()"></iframe>
+
   </main>
   <!-- Vendor JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -900,10 +1199,9 @@
       if (preloader) {
         window.addEventListener('load', () => {
           preloader.classList.add('loaded');
-          // Wait for the transition to finish before setting display to none
           setTimeout(() => {
             preloader.style.display = 'none';
-          }, 500); // This duration should match the CSS transition duration
+          }, 500);
         });
       }
       // ===== END: Preloader JS =====
@@ -938,13 +1236,11 @@
           });
         }
         
-        // Animate skills only when the about section is shown
         if (targetId === '#about') {
             animateSkills();
         }
 
         window.scrollTo(0, 0);
-
         updateActiveLink(targetId);
       };
 
@@ -975,6 +1271,28 @@
         backSpeed: 50,
         backDelay: 2000
       });
+      
+      const contactForm = document.getElementById('contact-form');
+      const submitButton = document.getElementById('submit-button');
+      let formSubmitted = false;
+
+      window.handleFormSubmit = function() {
+          formSubmitted = true;
+          submitButton.innerHTML = 'Sending...';
+          submitButton.disabled = true;
+      }
+
+      window.handleFormSuccess = function() {
+          if (formSubmitted) {
+              submitButton.innerHTML = 'Message Sent';
+              setTimeout(() => {
+                  contactForm.reset(); 
+                  submitButton.innerHTML = 'Send Message';
+                  submitButton.disabled = false;
+                  formSubmitted = false;
+              }, 5000); 
+          }
+      }
 
       const timeElement = document.getElementById('live-time');
       const updateTime = () => {
@@ -994,5 +1312,10 @@
       showPage('#home');
     });
   </script>
+
+  <!-- ===== START: WATERMARK 3 (Invisible Div) ===== -->
+  <div id="source-watermark" style="display:none !important;" data-signature="KB-Portfolio-v1-Auth-ID-a7b3c9d8e2f1"></div>
+  <!-- ===== END: WATERMARK 3 ===== -->
+
 </body>
 </html>
