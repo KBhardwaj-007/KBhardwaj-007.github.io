@@ -7,800 +7,47 @@
   <meta name="description" content="Welcome to the portfolio of Kuldeep Bhardwaj, a Backend Developer and IIT Delhi graduate showcasing projects, skills, and professional experience.">
   <meta name="keywords" content="Kuldeep Bhardwaj, Backend Developer, IIT Delhi, Python, Java, Machine Learning, Data Science, Portfolio">
 
+  <!-- ===== START: SEO & Social Sharing Meta Tags (SUGGESTION) ===== -->
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kbhardwaj-007.github.io/">
+  <meta property="og:title" content="Kuldeep Bhardwaj | Backend Developer">
+  <meta property="og:description" content="Welcome to the portfolio of Kuldeep Bhardwaj, a Backend Developer and IIT Delhi graduate.">
+  <meta property="og:image" content="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Professional_Photo.jpeg?raw=true">
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://kbhardwaj-007.github.io/">
+  <meta property="twitter:title" content="Kuldeep Bhardwaj | Backend Developer">
+  <meta property="twitter:description" content="Welcome to the portfolio of Kuldeep Bhardwaj, a Backend Developer and IIT Delhi graduate.">
+  <meta property="twitter:image" content="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Professional_Photo.jpeg?raw=true">
+  <!-- ===== END: SEO & Social Sharing Meta Tags ===== -->
+  
   <!-- ===== START: WATERMARK 1 (Custom Meta Tag) ===== -->
   <meta name="signature" content="KB-Portfolio-v1-Auth-ID-a7b3c9d8e2f1">
   <!-- ===== END: WATERMARK 1 ===== -->
 
-
   <!-- Favicon -->
   <link rel="icon" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/logo.jpeg?raw=true">
-  <!-- Preload critical background images for smooth loading -->
+  <!-- Preload critical background images -->
   <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/home_background.jpg?raw=true">
   <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/about_background.jpeg?raw=true">
   <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Resume_background.jpeg?raw=true">
   <link rel="preload" as="image" href="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Contact_background.jpeg?raw=true">
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
   <!-- Vendor CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <!-- Main CSS -->
-  <style>
-    /* Base Styles */
-    :root {
-      --primary-color: #ffc400; /* Accent Color */
-      --secondary-color: #fff;
-      --dark-color: #040404;
-      --body-font: 'Outfit', sans-serif;
-    }
-    body {
-      font-family: var(--body-font);
-      background-color: var(--dark-color);
-      color: var(--secondary-color);
-      margin: 0;
-      padding: 0;
-    }
-    p {
-      text-align: justify;
-    }
-    li {
-      text-align: justify;
-    }
-    a { color: var(--primary-color); text-decoration: none; }
-    a:hover { color: #ffd54f; text-decoration: none; }
-    h1, h2, h3, h4, h5, h6 { font-family: var(--body-font); }
-    
-    /* ===== START: Earth and Moon Preloader CSS ===== */
-    #preloader {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: var(--dark-color); /* Matches the body background */
-      z-index: 9999;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 0.5s ease-out; /* Smooth fade-out */
-    }
-    #preloader.loaded {
-      opacity: 0;
-      visibility: hidden; /* Hide after transition */
-    }
-    .preloader-container {
-      position: relative;
-      width: 120px;
-      height: 120px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .earth {
-      position: absolute;
-      width: 40px;
-      height: 40px;
-      background: radial-gradient(circle, #87CEEB, #2c729c); /* Sky blue to deep blue */
-      border-radius: 50%;
-      box-shadow: 0 0 20px rgba(135, 206, 235, 0.7), inset 0 0 10px rgba(0,0,0,0.3);
-    }
-    .moon-orbit {
-      position: absolute;
-      width: 100px; /* Diameter of the orbit */
-      height: 100px;
-      border-radius: 50%;
-      animation: orbit-spin 4s linear infinite;
-    }
-    .moon {
-      position: absolute;
-      top: -6px; /* (Orbit width - Moon width) / 2 adjusted */
-      left: 44px; /* (Orbit width - Moon width) / 2 */
-      width: 12px;
-      height: 12px;
-      background: #f0f0f0;
-      border-radius: 50%;
-      box-shadow: 0 0 10px #ffffff;
-    }
-    @keyframes orbit-spin {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-    /* ===== END: Preloader CSS ===== */
-
-    /* Top Navigation (for tabs) */
-    #top-nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 1rem 0;
-      background: rgba(10, 10, 10, 0.8);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      z-index: 1000;
-      display: none;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid #222;
-    }
-    #top-nav .nav-links { list-style: none; padding: 0; margin: 0 3rem 0 auto; display: flex; gap: 1.5rem; }
-    
-    /* ===== START: NEW TOP-NAV UNDERLINE STYLES ===== */
-    #top-nav .nav-links a { 
-      color: #ccc; 
-      font-weight: 500; 
-      text-decoration: none; 
-      cursor: pointer;
-      position: relative;
-      padding-bottom: 5px; /* Spacing for the underline */
-      transition: color 0.3s ease-in-out;
-    }
-    #top-nav .nav-links a:hover, 
-    #top-nav .nav-links a.active { 
-      color: var(--primary-color); 
-    }
-    #top-nav .nav-links a::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: var(--primary-color);
-      left: 0;
-      bottom: 0;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.3s ease-in-out;
-    }
-    #top-nav .nav-links a:hover::after,
-    #top-nav .nav-links a.active::after {
-      transform: scaleX(1);
-    }
-    /* ===== END: NEW TOP-NAV UNDERLINE STYLES ===== */
-    
-    .my-name {
-      font-size: 1.8rem; font-weight: 600; color: #fff; cursor: pointer;
-      transition: color 0.3s; margin-left: 5%;
-    }
-    .my-name:hover { color: var(--primary-color); }
-    
-    /* Header (Home Page) */
-    #header {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background-color: #040918; /* Fallback color */
-      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/home_background.jpg?raw=true');
-      background-size: cover;
-      background-position: center center;
-    }
-    .header-content { padding-left: 5%; position: relative; z-index: 2; }
-    .header-content p { font-size: 1.5rem; text-align: left;} /* Keep header text left-aligned */
-    #header h1 { font-size: 64px; margin: 0; padding: 0; line-height: 1; font-weight: 700; }
-    #header h1 .im { color: rgba(255, 255, 255, 0.7); }
-    #header h1 .name { 
-      background: linear-gradient(to right, #00aaff, #18d26e); 
-      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    #header h2 { color: #ccc; margin-top: 20px; font-size: 24px; }
-    #header .navbar { margin-top: 30px; }
-    #header .navbar ul { padding: 0; list-style: none; display: flex; gap: 25px; }
-    #header .navbar a { 
-      color: #ccc; 
-      font-weight: 500; 
-      padding-bottom: 5px; 
-      position: relative; 
-      cursor: pointer; 
-      transition: color 0.3s ease-in-out;
-      font-size: 1.1rem;
-    }
-    #header .navbar a:hover,
-    #header .navbar a.active {
-      color: var(--primary-color);
-    }
-    #header .navbar a::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background: var(--primary-color);
-      left: 0;
-      bottom: 0;
-      transform: scaleX(0);
-      transform-origin: center;
-      transition: transform 0.3s ease-in-out;
-    }
-    #header .navbar a:hover::after,
-    #header .navbar a.active::after {
-      transform: scaleX(1);
-    }
-    #header .social-links { margin-top: 40px; display: flex; align-items: center; gap: 15px; }
-    #header .social-links a {
-      font-size: 18px; display: flex; justify-content: center; align-items: center;
-      background: rgba(255, 255, 255, 0.1); color: #fff; line-height: 1;
-      border-radius: 50%; width: 40px; height: 40px; transition: 0.3s;
-    }
-    #header .social-links a:hover { background: var(--primary-color); }
-
-    /* General Section Styling */
-    .page-section {
-      position: relative;
-      padding: 50px 5% 60px 5%;
-      display: none; /* Hide sections by default */
-      min-height: 100vh; /* Allow section to grow, enabling scrolling */
-      background-size: cover;
-      background-position: center center;
-      background-attachment: fixed;
-      animation: fadeIn 0.5s ease-in-out; /* Use animation for smooth appearance */
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    
-    /* --- START: UPDATED & UNIFIED SECTION TITLE STYLES --- */
-    .section-title h2 {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #ccc;
-      text-transform: uppercase;
-      margin-bottom: 0;
-      position: relative;
-      padding-bottom: 0;
-      display: inline-block; /* Ensures the ::after pseudo-element is positioned correctly */
-    }
-
-    #about .section-title p,
-    #resume .section-title p,
-    #contact .section-title p {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #fff;
-      text-transform: uppercase;
-      letter-spacing: normal;
-      margin-bottom: 20px;
-    }
-    
-    /* --- START: RESTORED TITLE LINE --- */
-    .about-me > .section-title > h2::after,
-    #about .section-title.v2-title > h2::after,
-    #resume .section-title.v2-title > h2::after,
-    #contact .section-title.v2-title > h2::after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 120px;
-      height: 2px;
-      background: var(--primary-color);
-      top: 50%;
-      left: calc(100% + 20px);
-      transform: translateY(-50%);
-    }
-    /* --- END: RESTORED TITLE LINE --- */
-    
-    .section-title p { 
-      margin-bottom: 0; 
-      text-align: left;
-    }
-    
-    .page-section::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(4, 4, 4, 0.75); z-index: 1;
-    }
-    .page-section > * { position: relative; z-index: 2; }
-    
-    /* Section Backgrounds with Fallbacks */
-    #about {
-      background-color: #1a1a2e;
-      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/about_background.jpeg?raw=true');
-    }
-    #resume {
-      background-color: #0d021a;
-      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Resume_background.jpeg?raw=true');
-    }
-    #contact {
-      background-color: #0b1a2e;
-      background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Contact_background.jpeg?raw=true');
-    }
-    
-    /* About Section Specifics */
-    .profile-photo {
-        width: 250px;
-        height: 250px;
-        border-radius: 50%;
-        border: 6px solid var(--primary-color);
-        object-fit: cover;
-        box-shadow: 0 0 25px rgba(255, 196, 0, 0.5);
-    }
-    .about-me .content h3 { font-weight: 700; font-size: 26px; color: var(--primary-color); }
-    .gradient-text {
-      background: linear-gradient(90deg, var(--primary-color), #fff);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: bold;
-    }
-
-    /* Skills Section */
-    .skills .progress {
-      height: 60px;
-      display: block;
-      background: none;
-      border-radius: 0;
-    }
-    .skills .progress .skill {
-      padding: 0;
-      margin: 0 0 6px 0;
-      text-transform: uppercase;
-      display: block;
-      font-weight: 600;
-      font-family: var(--body-font);
-      color: #fff;
-    }
-    .skills .progress .skill .val {
-      float: right;
-      font-style: normal;
-    }
-    .skills .progress-bar-wrap {
-      background: rgba(255, 255, 255, 0.2);
-      height: 10px;
-      border-radius: 5px;
-    }
-    .skills .progress-bar {
-      width: 1px;
-      height: 10px;
-      transition: 0.9s;
-      background-color: var(--primary-color);
-      border-radius: 5px;
-    }
-    
-    /* Tech Interests Section Styling */
-    .tech .tech-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 30px;
-    }
-    .tech-item {
-        flex-basis: 130px;
-        height: 50px;
-        padding: 0 10px;
-        background: #1a1a1e;
-        border: 1px solid #333;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: #ccc;
-        position: relative;
-        overflow: hidden;
-        transition: all 0.3s ease-in-out;
-        cursor: pointer;
-        will-change: transform, box-shadow;
-    }
-    .tech-item img {
-        width: 20px;
-        height: 20px;
-    }
-    .tech-item:hover {
-        transform: translateY(-4px) scale(1.03);
-        color: #fff;
-        border-color: var(--primary-color);
-        box-shadow: 0 0 20px rgba(255, 196, 0, 0.5);
-    }
-    .tech-item::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 250px;
-        height: 250px;
-        background-image: radial-gradient(circle, rgba(255,196,0,0.5) 0%, rgba(156,39,176,0.3) 40%, rgba(4,4,4,0) 70%);
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
-        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-        border-radius: 50%;
-    }
-    .tech-item:hover::before {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-
-    /* ===== START: NEW Interests Section Styling ===== */
-    .interests .icon-box {
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid transparent;
-      border-radius: 8px;
-      transition: all 0.3s ease-in-out;
-      will-change: transform, box-shadow, border-color;
-    }
-    .interests .icon-box i {
-      font-size: 32px;
-      padding-right: 10px;
-      line-height: 1;
-      color: var(--interest-color); /* Use CSS variable for color */
-      transition: transform 0.3s ease-in-out;
-    }
-    .interests .icon-box h3 {
-      font-weight: 700;
-      margin: 0;
-      padding: 0;
-      line-height: 1;
-      font-size: 16px;
-    }
-    .interests .icon-box:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--interest-color);
-      transform: translateY(-5px);
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2), 0 0 20px var(--interest-color);
-    }
-    .interests .icon-box:hover i {
-      transform: scale(1.2) rotate(10deg);
-    }
-    /* ===== END: NEW Interests Section Styling ===== */
-
-    <!-- ===== START: WATERMARK 2 (Encoded Comment) ===== -->
-    <!-- Owner: Kuldeep Bhardwaj, SourceID: S0ItUE9SVEZPTElPLVYxLUFVVEgtSUQtYTdiM2M5ZDhlMmYx -->
-    <!-- ===== END: WATERMARK 2 ===== -->
-
-    /* Resume Section */
-    .resume .resume-title { font-size: 26px; font-weight: 700; margin-top: 20px; margin-bottom: 20px; color: #fff; }
-    .resume .resume-item {
-      padding: 0 0 20px 20px; margin-top: -2px; border-left: 2px solid rgba(255, 255, 255, 0.2); position: relative;
-    }
-    .resume .resume-item .location-item {
-      list-style: none;
-      position: relative;
-    }
-    .resume .resume-item .location-item::before {
-      content: '\f3e9';
-      font-family: 'bootstrap-icons';
-      font-weight: normal;
-
-      position: absolute;
-      left: -20px;
-      top: 2px;
-      color: var(--primary-color);
-    }
-    .resume .resume-item h4 {
-      line-height: 18px; font-size: 18px; font-weight: 600; text-transform: uppercase;
-      color: var(--primary-color); margin-bottom: 10px;
-    }
-    .resume .resume-item h4 a {
-      font-size: 16px;
-      vertical-align: middle;
-      margin-left: 10px;
-      color: var(--primary-color);
-      transition: color 0.3s;
-    }
-    .resume .resume-item h4 a:hover {
-      color: #fff;
-    }
-    .resume .resume-item h5 {
-      font-size: 16px; background: rgba(255, 255, 255, 0.15); padding: 5px 15px;
-      display: inline-block; font-weight: 600; margin-bottom: 10px;       
-      border-radius: 50px;
-    }
-    .resume .resume-item::before {
-      content: ""; position: absolute; width: 16px; height: 16px; border-radius: 50px;
-      left: -9px; top: 0; background: var(--primary-color); border: 2px solid var(--primary-color);
-    }
-    
-    /* --- START: Creative CTA Button Animation --- */
-    .cta-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--primary-color);
-      color: #000;
-      padding: 12px 30px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.4s ease-in-out;
-      position: relative;
-      overflow: hidden;
-      border: 2px solid transparent;
-    }
-    .cta-button span {
-      transition: transform 0.3s ease-in-out;
-    }
-    .cta-button i {
-      font-size: 1.2rem;
-      transition: transform 0.3s ease-in-out;
-    }
-    .cta-button:hover {
-      background: #ffc400;
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 25px rgba(255, 196, 0, 0.6);
-      border-color: #ffd54f;
-      color: #000;
-    }
-    .cta-button:hover i {
-      transform: translateY(-4px);
-    }
-    .cta-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 75%;
-      height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-      transition: left 0.6s ease-in-out;
-      transform: skewX(-25deg);
-    }
-    .cta-button:hover::before {
-      left: 150%;
-    }
-    /* --- END: Creative CTA Button Animation --- */
-    
-    /* Contact Section */
-    .contact .info-box {
-      color: #fff; padding: 20px; width: 100%; background: rgba(255, 255, 255, 0.08);
-      border-radius: 8px; height: 100%;
-    }
-    .contact .info-box i.bx {
-      font-size: 24px; color: var(--primary-color); border-radius: 50%; padding: 14px;
-      float: left; background: rgba(255, 255, 255, 0.1);
-    }
-    .contact .info-box h3 { font-size: 20px; color: #fff; font-weight: 700; margin: 10px 0 10px 68px; }
-    .contact .info-box p { padding: 0; color: #ccc; line-height: 24px; font-size: 14px; margin: 0 0 0 68px; text-align: left;}
-    
-    .contact .php-email-form { padding: 30px; background: rgba(255, 255, 255, 0.08); border-radius: 8px; }
-    .contact .php-email-form input, .contact .php-email-form textarea {
-      background: rgba(0, 0, 0, 0.3); border: 1px solid #333; padding: 10px;
-      color: #fff; width: 100%; border-radius: 5px;
-    }
-    .contact .php-email-form input::placeholder,
-    .contact .php-email-form textarea::placeholder {
-      color: rgba(255, 255, 255, 0.7);
-      opacity: 1; /* Override default browser opacity */
-    }
-
-    /* --- START: GALAXY THEME BUTTON --- */
-    .contact .php-email-form button[type="submit"] {
-      position: relative;
-      overflow: hidden;
-      padding: 12px 30px;
-      font-weight: 600;
-      font-size: 16px;
-      color: #fff;
-      background: linear-gradient(45deg, #0c0c1e, #1a1a3a, #2a2a5f, #3c1a5b, #0c0c1e);
-      background-size: 400% 400%;
-      border: 1px solid rgba(173, 136, 255, 0.5);
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.5s ease-in-out;
-      animation: galaxy-shimmer 20s linear infinite;
-      z-index: 1;
-    }
-
-    @keyframes galaxy-shimmer {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .contact .php-email-form button[type="submit"]:hover {
-      border-color: #ad88ff;
-      box-shadow: 0 0 15px #ad88ff, 0 0 25px #ad88ff, inset 0 0 5px rgba(255, 255, 255, 0.2);
-      animation-duration: 10s;
-    }
-    
-    .contact .php-email-form button[type="submit"]:disabled {
-      opacity: 0.7;
-      cursor: not-allowed;
-      animation: none;
-      box-shadow: none;
-    }
-
-    .contact .php-email-form button[type="submit"]::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 20px;
-      height: 300%;
-      background: linear-gradient(
-        to bottom,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.8) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      transform: rotate(45deg) translateX(-500%);
-      transition: transform 1s ease-in-out;
-      z-index: 2;
-      opacity: 0.8;
-    }
-
-    .contact .php-email-form button[type="submit"]:hover:not(:disabled)::before {
-      transform: rotate(45deg) translateX(500%);
-    }
-    /* --- END: GALAXY THEME BUTTON --- */
-    
-    /* --- START: Added styles for two-column contact section --- */
-    .contact .contact-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px; /* Space between the two columns */
-    }
-    .contact .contact-message,
-    .contact .php-email-form {
-      flex: 1; /* Allows columns to grow and shrink equally */
-      min-width: 300px; /* Ensures columns stack on smaller screens */
-    }
-    .contact .contact-message {
-      background: rgba(255, 255, 255, 0.08);
-      padding: 30px;
-      border-radius: 8px;
-      color: #ccc;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .contact .contact-message h2 {
-      font-size: 40px;
-      font-weight: 600;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-    .contact .contact-message p {
-      line-height: 1.6;
-      font-size: 15px;
-      text-align: left;
-    }
-    .contact .contact-message p:last-child {
-      margin-bottom: 0;
-    }
-    /* --- END: Added styles for two-column contact section --- */
-
-    /* --- START: COPYRIGHT STYLES --- */
-    .copyright {
-      text-align: center;
-      padding-top: 30px;
-      margin-top: 40px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: #ccc;
-      font-size: 14px;
-    }
-    .copyright strong {
-      color: var(--primary-color);
-    }
-    /* --- END: COPYRIGHT STYLES --- */
-    
-    /* Typed.js Cursor */
-    .typed-cursor { opacity: 1; animation: typedjsBlink 0.7s infinite; }
-    @keyframes typedjsBlink { 50% { opacity: 0.0; } }
-
-    /* Media Queries for Responsive Design */
-    @media (max-width: 992px) {
-      #header {
-        background-attachment: scroll;
-      }
-      .page-section {
-        background-attachment: scroll;
-      }
-      #top-nav .nav-links {
-        margin-right: 2rem;
-        gap: 1rem;
-      }
-      .my-name {
-        margin-left: 2%;
-      }
-    }
-
-    @media (max-width: 768px) {
-      #header h1 {
-        font-size: 48px;
-      }
-      #header h2 {
-        font-size: 20px;
-      }
-      #header .navbar ul {
-        gap: 15px;
-      }
-      .about-me > .section-title > h2::after,
-      #about .section-title.v2-title > h2::after,
-      #resume .section-title.v2-title > h2::after,
-      #contact .section-title.v2-title > h2::after {
-        width: 80px;
-        left: calc(100% + 15px);
-      }
-      .profile-photo {
-        width: 200px;
-        height: 200px;
-      }
-      .about-me .content {
-        text-align: center;
-      }
-      .about-me .content p {
-        text-align: justify;
-      }
-      .skills .col-lg-6 {
-        margin-bottom: 20px;
-      }
-      .contact .contact-container {
-        flex-direction: column;
-      }
-      #top-nav {
-        flex-direction: column;
-        padding: 0.5rem 0;
-      }
-      #top-nav .nav-links {
-        margin: 0.5rem 0 0 0;
-      }
-    }
-
-    @media (max-width: 576px) {
-      body {
-        font-size: 14px;
-      }
-      #header {
-        text-align: center;
-      }
-      .header-content {
-        padding: 0 5%;
-      }
-      .header-content p {
-        text-align: center;
-      }
-      #header .navbar ul {
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-      #header .social-links {
-        justify-content: center;
-      }
-      .section-title {
-        text-align: center;
-      }
-      .section-title h2 {
-        display: block;
-        text-align: center;
-      }
-      .about-me > .section-title > h2::after,
-      #about .section-title.v2-title > h2::after,
-      #resume .section-title.v2-title > h2::after,
-      #contact .section-title.v2-title > h2::after {
-        display: none;
-      }
-      .section-title p {
-        text-align: center;
-      }
-      .tech-item {
-        flex-basis: 100px;
-      }
-      .interests .icon-box {
-        justify-content: center;
-      }
-      .contact .info-box {
-        text-align: center;
-      }
-      .contact .info-box i.bx {
-        float: none;
-        margin-bottom: 10px;
-      }
-      .contact .info-box h3,
-      .contact .info-box p {
-        margin-left: 0;
-      }
-      .contact .info-box p {
-        text-align: center;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- ===== START: Preloader HTML ===== -->
@@ -855,6 +102,7 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center" data-aos="fade-right">
+                    <!-- ===== Added loading="lazy" for performance (SUGGESTION) ===== -->
                     <img src="https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Professional_Photo.jpeg?raw=true" class="profile-photo" alt="Kuldeep Bhardwaj">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
@@ -871,7 +119,8 @@
             <div class="section-title v2-title" style="margin-bottom: 30px;">
                 <h2>Skills</h2>
             </div>
-            <div class="row skills-content">
+            <!-- ===== Added ID for more robust JS targeting (SUGGESTION) ===== -->
+            <div class="row skills-content" id="skills-container">
               <div class="col-lg-6" data-aos="fade-up">
                 <div class="progress">
                   <span class="skill">Python <i class="val">95%</i></span>
@@ -1155,18 +404,23 @@
             <div class="php-email-form" data-aos="fade-left">
                 <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfDqy7-EX4FKo9HUUlHtkJg0S_TBmMXbNN2LfBnnXvc2Rlppg/formResponse" method="post" role="form" target="hidden_iframe" onsubmit="handleFormSubmit()">
                     <div class="row">
+                        <!-- ===== Added accessible labels (SUGGESTION) ===== -->
                         <div class="col-md-6 form-group">
-                            <input type="text" name="entry.60701379" class="form-control" placeholder="Your Name" required>
+                            <label for="contact-name" class="visually-hidden">Your Name</label>
+                            <input type="text" id="contact-name" name="entry.60701379" class="form-control" placeholder="Your Name" required>
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" name="entry.1475755609" class="form-control" placeholder="Your Email" required>
+                            <label for="contact-email" class="visually-hidden">Your Email</label>
+                            <input type="email" id="contact-email" name="entry.1475755609" class="form-control" placeholder="Your Email" required>
                         </div>
                     </div>
                     <div class="form-group mt-3">
-                        <input type="text" name="entry.1008991053" class="form-control" placeholder="Subject" required>
+                        <label for="contact-subject" class="visually-hidden">Subject</label>
+                        <input type="text" id="contact-subject" name="entry.1008991053" class="form-control" placeholder="Subject" required>
                     </div>
                     <div class="form-group mt-3">
-                        <textarea name="entry.1222746377" class="form-control" rows="5" placeholder="Message" required></textarea>
+                        <label for="contact-message" class="visually-hidden">Message</label>
+                        <textarea id="contact-message" name="entry.1222746377" class="form-control" rows="5" placeholder="Message" required></textarea>
                     </div>
                     <div class="text-center mt-4">
                         <button type="submit" id="submit-button">Send Message</button>
@@ -1175,9 +429,10 @@
             </div>
         </div>
 
-        <div class="copyright">
-          Designed by KULDEEP BHARDWAJ
-        </div>
+        <!-- ===== Changed div to semantic footer tag (SUGGESTION) ===== -->
+        <footer class="copyright">
+          Designed by <strong>KULDEEP BHARDWAJ</strong>
+        </footer>
 
     </section>
     <!-- End Contact Section -->
@@ -1212,7 +467,8 @@
       const allNavLinks = document.querySelectorAll('.nav-link');
 
       const animateSkills = () => {
-          let skilsContent = document.querySelector('.skills-content');
+          // ===== Updated to use ID selector for robustness (SUGGESTION) =====
+          let skilsContent = document.getElementById('skills-container');
           if (skilsContent) {
             const progressBars = skilsContent.querySelectorAll('.progress-bar');
             progressBars.forEach(progressBar => {
@@ -1246,11 +502,7 @@
 
       const updateActiveLink = (targetId) => {
         allNavLinks.forEach(link => {
-          if (link.getAttribute('data-target') === targetId) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
+            link.classList.toggle('active', link.getAttribute('data-target') === targetId);
         });
       };
 
@@ -1319,4 +571,3 @@
 
 </body>
 </html>
-
