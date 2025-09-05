@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--body-font); }
   align-items: center;
   overflow: hidden;
   background-color: #040918; /* Fallback color */
-  background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/home_background.jpg?raw=true');
+  background-image: url('https://github.com/KBhardwaj-007/KBhardwaj-007.github.io/blob/main/images/Home_background.jpg?raw=true');
   background-size: cover;
   background-position: center center;
 }
@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--body-font); }
 #header h1 { font-size: 64px; margin: 0; padding: 0; line-height: 1; font-weight: 700; }
 #header h1 .im { color: rgba(255, 255, 255, 0.7); }
 #header h1 .name { 
-  background: linear-gradient(to right, #00aaff, #18d26e); 
+  background: linear-gradient(to right, #c33764, #9f4298); 
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
 }
 #header h2 { color: #fff; margin-top: 20px; font-size: 24px; }
@@ -778,4 +778,5 @@ h1, h2, h3, h4, h5, h6 { font-family: var(--body-font); }
   .contact .info-box p {
     text-align: center;
   }
+
 }
