@@ -94,7 +94,7 @@
   </header>
 
   <main>
-    <section id="about" class="page-section">
+    <section id="about" class="page-section" data-aos="fade-up">
         <div class="about-me">
             <div class="section-title" style="margin-top: 60px; margin-bottom: 40px;">
                 <h2>ABOUT</h2>
@@ -271,7 +271,7 @@
             <p>CHECK MY RESUME</p>
         </div>
         <div class="row">
-          <div class="col-lg-6" data-aos="fade-up">
+          <div class="col-lg-6">
             <h3 class="resume-title">Summary</h3>
             <div class="resume-item pb-0">
               <h4>Kuldeep Bhardwaj</h4>
@@ -312,7 +312,7 @@
              </div>
           </div>
           
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-6">
             <h3 class="resume-title">Professional Experience</h3>
             <div class="resume-item">
               <h4>Data Analyst Intern</h4>
@@ -392,7 +392,7 @@
 
         <div class="contact-container">
             <!-- Left Column: Message Box -->
-            <div class="contact-message" data-aos="fade-right">
+            <div class="contact-message">
                 <h2>Hello there! 👋</h2>
                 <h3>Thanks for dropping by — it means a lot! 🙌</h3>
                 <h3>💡 Got questions, ideas, or just curious? I’m all ears! 🧏‍♂️✨</h3>
@@ -401,7 +401,7 @@
             </div>
 
             <!-- Right Column: Contact Form -->
-            <div class="php-email-form" data-aos="fade-left">
+            <div class="php-email-form">
                 <form id="contact-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfDqy7-EX4FKo9HUUlHtkJg0S_TBmMXbNN2LfBnnXvc2Rlppg/formResponse" method="post" role="form" target="hidden_iframe" onsubmit="handleFormSubmit()">
                     <div class="row">
                         <!-- ===== Added accessible labels (SUGGESTION) ===== -->
@@ -466,19 +466,13 @@
       const sections = document.querySelectorAll('.page-section');
       const allNavLinks = document.querySelectorAll('.nav-link');
 
-      const animateSkills = () => {
-          // ===== Updated to use ID selector for robustness (SUGGESTION) =====
-          let skilsContent = document.getElementById('skills-container');
-          if (skilsContent) {
-            const progressBars = skilsContent.querySelectorAll('.progress-bar');
-            progressBars.forEach(progressBar => {
-              progressBar.style.width = progressBar.getAttribute('aria-valuenow') + '%';
-            });
-          }
-      };
-
       const showPage = (targetId) => {
         const isHome = targetId === '#home';
+        
+        // Always reset progress bars when changing pages to ensure animation replays
+        document.querySelectorAll('#about .progress-bar').forEach(pb => {
+          pb.style.width = '1px';
+        });
 
         if (isHome) {
           header.style.display = 'flex';
@@ -492,9 +486,33 @@
           });
         }
         
+        // ===== START: Animation Trigger Logic (Corrected) =====
         if (targetId === '#about') {
-            animateSkills();
+          const aboutSection = document.getElementById('about');
+          const aosElements = aboutSection.querySelectorAll('[data-aos]');
+
+          // 1. Reset AOS animation state
+          aosElements.forEach(el => {
+            el.classList.remove('aos-init', 'aos-animate');
+          });
+
+          // 2. Use a timeout to trigger animations after the section is rendered
+          setTimeout(() => {
+            // Re-initialize AOS to detect and animate the elements in the "About" section
+            AOS.init({
+              duration: 800,
+              easing: 'ease-in-out',
+              once: true
+            });
+            AOS.refresh();
+
+            // Set the final width for progress bars; CSS will handle the transition
+            aboutSection.querySelectorAll('.progress-bar').forEach(pb => {
+              pb.style.width = pb.getAttribute('aria-valuenow') + '%';
+            });
+          }, 10); // A minimal delay is sufficient for the browser to render the change
         }
+        // ===== END: Animation Trigger Logic =====
 
         window.scrollTo(0, 0);
         updateActiveLink(targetId);
@@ -514,6 +532,7 @@
         });
       });
 
+      // Initialize AOS globally on first load
       AOS.init({ duration: 800, easing: 'ease-in-out', once: true });
 
       new Typed('.typed', {
