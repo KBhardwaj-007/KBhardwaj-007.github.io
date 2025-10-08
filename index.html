@@ -40,7 +40,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <!-- Vendor CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"
+    crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -48,6 +49,53 @@
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Added for progress bar transition on scroll reveal and refresh button styling -->
+  <style>
+    #about .progress-bar {
+        transition: width 1.5s ease-in-out;
+    }
+    
+    /* Custom styling for the refresh button in error state */
+    #leetcode-error-refresh-area {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap; /* Allows text and button to wrap if too long */
+        margin-top: 20px;
+        gap: 10px;
+    }
+    
+    #leetcode-refresh-btn {
+        background: none;
+        border: none;
+        color: var(--primary-color, #47aeff); /* Use a suitable color, e.g., the primary theme color */
+        cursor: pointer;
+        font-size: 1rem;
+        padding: 5px 10px;
+        transition: transform 0.3s ease-in-out, opacity 0.3s;
+        border-radius: 5px;
+        text-decoration: underline;
+    }
+
+    #leetcode-refresh-btn:hover {
+        transform: scale(1.05);
+        color: var(--secondary-color, #20c997); /* Change color on hover */
+    }
+    
+    #leetcode-refresh-btn:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        animation: spin 1s linear infinite;
+        text-decoration: none;
+    }
+    
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+  </style>
 </head>
 <body>
   <!-- ===== START: Preloader HTML ===== -->
@@ -199,7 +247,7 @@
             </div>
         </div>
 
-        <!-- ===== START: LeetCode Contribution Graph Section ===== -->
+        <!-- ===== START: LeetCode Contribution Graph Section (Modified) ===== -->
         <div class="leetcode-stats container-fluid" style="margin-top: 60px; margin-bottom: 60px;">
             <div class="section-title v2-title" style="margin-bottom: 30px;">
                 <h2>LEETCODE ACTIVITY</h2>
@@ -227,6 +275,13 @@
                 </div>
                 <div id="loading" class="loading">Loading Activity...</div>
             </div>
+            <!-- New Error/Refresh Container Added Here -->
+            <div id="leetcode-error-refresh-area" style="display: none;">
+                <span id="leetcode-error-message"></span>
+                <button id="leetcode-refresh-btn" aria-label="Refresh LeetCode Stats" title="Refresh LeetCode Stats">
+                    <i class="ri-refresh-line"></i> Refresh
+                </button>
+            </div>
             <div style="text-align: center; margin-top: 40px;" data-aos="fade-up">
               <a href="https://leetcode.com/u/K_Bhardwaj/" target="_blank" class="cta-button">
                 <span>View LeetCode Profile</span>
@@ -234,7 +289,7 @@
               </a>
             </div>
         </div>
-        <!-- ===== END: LeetCode Contribution Graph Section ===== -->
+        <!-- ===== END: LeetCode Contribution Graph Section (Modified) ===== -->
 
         <div class="tech container-fluid">
             <div class="section-title v2-title">
@@ -272,7 +327,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-4 mt-4">
                     <div class="icon-box" data-aos="zoom-in" style="--interest-color: #ffbb2c;">
-                        <i class="ri-code-s-slash-line"></i><h3>Coding</h3>
+                        <i class="ri-code-s-slash-line"></i><h3>Coding & Competitive Programming</h3>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4 mt-4">
@@ -292,7 +347,22 @@
                 </div>
                 <div class="col-lg-3 col-md-4 mt-4">
                     <div class="icon-box" data-aos="zoom-in" style="--interest-color: #47aeff;">
-                        <i class="ri-robot-line"></i><h3>New Technologies</h3>
+                        <i class="ri-brain-line"></i><h3>Machine Learning & AI</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #ff6347;">
+                        <i class="ri-sparkling-2-line"></i><h3>Emerging Technologies</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #ffdd00;">
+                        <i class="ri-flag-line"></i><h3>Formula Racing & EVs</h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 mt-4">
+                    <div class="icon-box" data-aos="zoom-in" style="--interest-color: #8a2be2;">
+                        <i class="ri-cpu-line"></i><h3>Electronics & Hardware Tinkering</h3>
                     </div>
                 </div>
             </div>
@@ -363,7 +433,7 @@
             
             <h3 class="resume-title">Projects</h3>
             <div class="resume-item">
-              <h4>Personalized Retail Product Recommendation System
+              <h4>Retail Product Recommendation System
                 <a href="https://github.com/KBhardwaj-007/Product-Recommendation-System" target="_blank" aria-label="View Project on GitHub"><i class="bi bi-box-arrow-up-right"></i></a>
               </h4>
               <span class="badge rounded-pill bg-primary">Machine Learning</span>
@@ -497,13 +567,54 @@
       const header = document.getElementById('header');
       const sections = document.querySelectorAll('.page-section');
       const allNavLinks = document.querySelectorAll('.nav-link');
+      
+      // ===== START: Progress Bar Animation on Scroll Logic (New) =====
+      const skillsContainer = document.getElementById('skills-container');
+      let skillsAnimated = false; // Flag to prevent repeated animation
+      
+      const animateSkills = (targetElement) => {
+        targetElement.querySelectorAll('.progress-bar').forEach(pb => {
+          pb.style.width = pb.getAttribute('aria-valuenow') + '%';
+        });
+        skillsAnimated = true;
+      };
+
+      const resetSkills = () => {
+        document.querySelectorAll('#skills-container .progress-bar').forEach(pb => {
+          // Set to 1px initially for the CSS transition to work from a small starting point
+          pb.style.width = '1px'; 
+        });
+        skillsAnimated = false;
+      }
+      
+      let skillsObserver;
+      if (skillsContainer && 'IntersectionObserver' in window) {
+        skillsObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !skillsAnimated) {
+              animateSkills(entry.target);
+            }
+          });
+        }, {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.1 // Trigger when 10% of the element is visible
+        });
+      }
+      // ===== END: Progress Bar Animation on Scroll Logic =====
 
       const showPage = (targetId) => {
         const isHome = targetId === '#home';
         
-        document.querySelectorAll('#about .progress-bar').forEach(pb => {
-          pb.style.width = '1px';
-        });
+        // Reset skills state for every navigation (prevents animation when not on about)
+        if (skillsContainer) {
+            resetSkills(); 
+        }
+        
+        // Stop observing if we are leaving #about
+        if (targetId !== '#about' && skillsObserver && skillsContainer) {
+            skillsObserver.unobserve(skillsContainer);
+        }
 
         if (isHome) {
           header.style.display = 'flex';
@@ -530,9 +641,19 @@
               once: true
             });
             AOS.refresh();
-            aboutSection.querySelectorAll('.progress-bar').forEach(pb => {
-              pb.style.width = pb.getAttribute('aria-valuenow') + '%';
-            });
+            
+            // Re-check for immediate animation or start observing for scroll reveal
+            if (skillsContainer) {
+                // Check if skills are already visible on page load/navigation and force animation
+                // clientRect.top < window.innerHeight means the top of the element is above the bottom of the viewport
+                if (skillsContainer.getBoundingClientRect().top < window.innerHeight && !skillsAnimated) {
+                    animateSkills(skillsContainer);
+                } else if (skillsObserver) {
+                    // If not visible, ensure the observer is watching for scroll
+                    skillsObserver.observe(skillsContainer);
+                }
+            }
+            
           }, 10);
         }
 
@@ -601,21 +722,31 @@
       updateTime();
       setInterval(updateTime, 1000);
 
-      // ===== START: LeetCode Contribution Graph Logic =====
+      // ===== START: LeetCode Contribution Graph Logic (Modified) =====
       const username = "K_Bhardwaj";
       const apiUrl = `https://leetcode-stats-api.herokuapp.com/${username}`;
       const dayGrid = document.getElementById("day-grid");
       const graphHeader = document.getElementById("graph-header");
       const weekdayLabels = document.getElementById("weekday-labels");
       const loadingEl = document.getElementById("loading");
+      const errorArea = document.getElementById("leetcode-error-refresh-area");
+      const errorMessageEl = document.getElementById("leetcode-error-message");
+      const refreshButton = document.getElementById("leetcode-refresh-btn");
 
-      async function fetchLeetCodeStats() {
-          if (!dayGrid || !graphHeader || !loadingEl || !weekdayLabels) return;
+      let leetCodeInterval;
 
+      async function fetchLeetCodeStats(isManual = false) {
+          if (!dayGrid || !graphHeader || !loadingEl || !weekdayLabels || !errorArea || !errorMessageEl || !refreshButton) return;
+
+          // Hide error/refresh area and graph components, show loading
+          errorArea.style.display = "none";
           loadingEl.style.display = "block";
+          loadingEl.textContent = isManual ? "Refreshing Activity..." : "Loading Activity...";
           dayGrid.innerHTML = "";
           graphHeader.innerHTML = "";
           weekdayLabels.innerHTML = "";
+          
+          refreshButton.disabled = true; // Disable button during fetch
 
           try {
               const response = await fetch(apiUrl);
@@ -677,16 +808,43 @@
               
                   dayGrid.appendChild(dayElement);
               }
+              
+              // Success: Hide loading, enable button (if it was visible for some reason)
               loadingEl.style.display = "none";
+              refreshButton.disabled = false;
+
           } catch (error) {
+                // Failure: Hide loading, show error area with button
                 console.error("Error fetching LeetCode stats:", error);
-                loadingEl.textContent = "Failed to load LeetCode stats.";
+                loadingEl.style.display = "none";
+                errorMessageEl.textContent = "Failed to load LeetCode stats.";
+                errorArea.style.display = "flex"; // Show the error message and refresh button
+                refreshButton.disabled = false;
           }
       }
+      
+      const setupLeetCodeRefreshButton = () => {
+          if (refreshButton) {
+              refreshButton.addEventListener('click', () => {
+                  // Clear the existing interval if it exists
+                  if (leetCodeInterval) {
+                      clearInterval(leetCodeInterval);
+                  }
+                  
+                  // Perform manual fetch
+                  fetchLeetCodeStats(true).then(() => {
+                      // Re-establish the interval after the manual refresh is done
+                      leetCodeInterval = setInterval(() => fetchLeetCodeStats(), 86400000);
+                  });
+              });
+          }
+      };
 
+      // Initial load and setup
       fetchLeetCodeStats();
-      setInterval(fetchLeetCodeStats, 86400000);
-      // ===== END: LeetCode Contribution Graph Logic =====
+      leetCodeInterval = setInterval(() => fetchLeetCodeStats(), 86400000);
+      setupLeetCodeRefreshButton();
+      // ===== END: LeetCode Contribution Graph Logic (Modified) =====
 
       showPage('#home');
     });
